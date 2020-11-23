@@ -1,0 +1,43 @@
+.profileBlock {
+  display: grid;
+  grid-template-areas:
+  "bg"
+  "posts"
+  "post";
+  grid-gap: 10px;
+}
+.profile__wrap {
+    color: #fff;
+    width: 100%;
+  }
+  .profile__bg {
+    position: relative;
+    max-width: 1200px;
+    height: 250px;
+    background: url(./../../assets/img//bg1.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .profile__photoWrapper {
+    position: absolute;
+    margin-left: -21px;
+    left: 50%;
+    bottom: 34%;
+  }
+  .profile__photo {
+    margin: 0 auto;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 2px solid #252e4b;
+    overflow: hidden;
+  }
+  .profile__detail {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .profile__info {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px 30px; 
+    background-color: #1E2745;
+  }

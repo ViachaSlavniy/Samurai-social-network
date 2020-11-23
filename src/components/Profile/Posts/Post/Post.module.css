@@ -1,0 +1,65 @@
+.post {
+    grid-area: post;
+    background-color: #1E2745;
+    color: #8c91b6;
+    padding: 20px;
+  }
+  .post__info {
+    display: flex;
+    align-items: center;
+  }
+  .post__photo {
+    margin-right: 10px;
+    width: 71px;
+    height: 75px;
+    border-radius: 50%;
+    border: 1px solid #252e4b;
+    overflow: hidden;
+  }
+  .post__photo img {
+    object-fit: contain;
+    max-width: 100%;
+  }
+  .post__text {
+    margin: 10px 0;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+  .post__counter {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #252e4b;
+  }
+  .post__counterItem:nth-child(2) {
+    margin-left: 10px;
+  }
+  .post__counterItem:last-child {
+    float: right;
+  }
+  .post__comments {
+    margin-top: 20px;
+  }
+  .comment__user {
+    display: flex;
+  }
+  .user__img {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #252e4b;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  .user__img img {
+    object-fit: contain;
+    max-width: 100%;
+  }
+  .user__comment {
+    margin: 10px 0;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  .comment__detailItem {
+    margin-right: 10px  ;
+  }

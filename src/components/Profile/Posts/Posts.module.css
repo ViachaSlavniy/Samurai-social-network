@@ -1,0 +1,58 @@
+.posts__block {
+    grid-area: posts;
+    background-color: #1E2745;
+    padding: 0 0 20px;
+  }
+  .posts__form {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+  .posts__blockTitle {
+    color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #252e4b;
+  }
+  .posts__formImg {
+    margin-right: 10px;
+    width: 80px;
+    height: 75px;
+    border-radius: 50%;
+    border: 1px solid #252e4b;
+    overflow: hidden;
+  }
+  .posts__formImg img {
+    object-fit: contain;
+    max-width: 100%;
+  }
+  .posts__form form {
+    width: 100%;
+  }
+  .posts__textarea {
+    width: 100%;
+    border: none;
+    background-color:#1E2745;
+    resize: none;
+    outline: none;
+    font-size: 15px;
+    color: #8c91b6;
+  }
+  .posts__btn {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px 0;
+  
+    background-color: #2aa3fb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all .2s linear;
+  
+    cursor: pointer;
+  }
+
+  .posts__btn:hover {
+    background-color: #fff;
+    color:#2aa3fb;
+  }

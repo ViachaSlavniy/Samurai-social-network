@@ -1,0 +1,24 @@
+  .nav li {
+    list-style-type: none;
+  }
+  .nav li a {
+    text-decoration: none;
+  }
+  .activeLink {
+    background: #29324f;
+  }
+  .nav__item {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    color: #8c91b6;
+    transition: color .2s ease-in;
+  }
+  .nav__item:hover {
+    color: #50b5ff;
+  }
+  .sidebar__nav {
+    grid-area: nav;
+    padding: 20px;
+    background-color: #1E2745;
+  }

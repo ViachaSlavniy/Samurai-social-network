@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: header;  
+    background-color: #1E2745;
+    color: #fff;
+  }
+  .header__logo {
+    flex-basis: 20%;
+  }
+  .header__search {
+    flex-basis: 50%;
+  }
+  .header__info {
+    flex-basis: 30%;
+  }
