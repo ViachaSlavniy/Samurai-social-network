@@ -1,4 +1,5 @@
-import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE} from './types'
+import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE} from './types';
+import { usersAPI } from './../../api/api';
 
 
 // ACTION CREATORS
@@ -36,4 +37,33 @@ export const setCurrentPageAC = (page) => {
         type: SET_CURRENT_PAGE,
         payload: page
     }
+}
+
+// THUNK CREATORS
+
+export const getUsersTC = (currentPage, pageSize) => (dispatch) => {
+    usersAPI.getUsers(currentPage, pageSize)
+            .then((data) => {
+        dispatch(setLoadAC(false))
+        dispatch(setUsersAC(data))
+        dispatch(setLoadAC(true))
+    })
+}
+
+export const followTC = (userId) => (dispatch) => {
+    usersAPI.follow(userId)
+            .then((resp) => {
+            if(resp.resultCode === 0) {
+                dispatch(followAC(userId));
+            }
+    })
+}
+
+export const unfollowTC = (userId) => (dispatch) => {
+    usersAPI.unfollow(userId)
+            .then((resp) => {
+            if(resp.resultCode === 0) {
+                dispatch(unfollowAC(userId));
+            }
+    })
 }

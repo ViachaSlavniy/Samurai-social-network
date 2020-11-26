@@ -1,8 +1,7 @@
 import { React, useEffect } from 'react';
-import axios from 'axios';
 import s from './Users.module.css'
 import usersBg from './../../assets/img/usersBg.jpg';
-import { setUsersAC, setLoadAC } from '../../redux/actions/users';
+import { getUsersTC } from '../../redux/actions/users';
 import { useDispatch, useSelector } from 'react-redux';
 import Preloader from '../Common/Preloader';
 import UserCard from './UsersCard/UserCard';
@@ -13,15 +12,7 @@ function Users() {
     const {isLoaded, currentPage, pageSize} = useSelector(({users}) => users);
 
     useEffect(() => {
-        dispatch(setLoadAC(false))
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${pageSize}`, {
-            withCredentials: true,
-            headers: {'API-KEY': 'deb5a1cf-eef7-4206-9237-48ed86537d51'}
-        })
-            .then((response) => {
-                dispatch(setUsersAC(response.data))
-                dispatch(setLoadAC(true))
-            });
+        dispatch(getUsersTC(currentPage, pageSize))
     },[currentPage])
 
     const oldUsersArr = useSelector(({users}) => users.items);

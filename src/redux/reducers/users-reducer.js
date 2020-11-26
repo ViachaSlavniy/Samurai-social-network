@@ -5,7 +5,7 @@ const initialState = {
     isLoaded: false,
     totalCount: null,
     error: null,
-    currentPage: 3,
+    currentPage: 1,
     pageSize: 10,
     portionSize: 10
 }

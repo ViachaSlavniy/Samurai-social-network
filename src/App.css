@@ -25,6 +25,12 @@ body {
   grid-gap: 10px;
 }
 
+.page-item {
+  width: 50px;
+}
+.page-item a {
+  text-align: center;
+}
 
 
 

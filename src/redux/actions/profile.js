@@ -1,4 +1,5 @@
-import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH } from './types'
+import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH } from './types';
+import {profileAPI} from './../../api/api';
 
 
 export const addPostAC = (post) => {
@@ -28,3 +29,14 @@ export const setFetchingAC = (boolean) => {
         payload: boolean
     }
 }
+
+// THUNK CREATORS
+
+export const getProfileTC = (id) => (dispatch) => {
+    profileAPI.getProfile(id).then((data) => {
+        dispatch(setFetchingAC(false))
+        dispatch(setProfileAC(data))
+        dispatch(setFetchingAC(true)) 
+    })
+}
+

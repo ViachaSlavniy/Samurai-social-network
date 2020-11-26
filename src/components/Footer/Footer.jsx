@@ -4,7 +4,7 @@ import s from './Footer.module.css';
 function Footer() {
     return (
         <footer className={s.footer}>
-            FOOTER
+            Copyright 2020 SamuraiSocial All Rights Reserved.
         </footer>
     )
 }

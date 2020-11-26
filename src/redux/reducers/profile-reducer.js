@@ -1,4 +1,5 @@
-import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH } from './../actions/types'
+import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH } from './../actions/types';
+
 
 const initialState = {
     profilePage: null,
@@ -49,3 +50,7 @@ const profileReducer = (state = initialState, action) => {
 }
 
 export default profileReducer;
+
+
+
+

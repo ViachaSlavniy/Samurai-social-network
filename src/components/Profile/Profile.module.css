@@ -6,8 +6,7 @@
   "post";
   grid-gap: 10px;
 }
-.profile__wrap {
-    color: #fff;
+.profile__wrap {  
     width: 100%;
   }
   .profile__bg {

@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
-import {setProfileAC, setFetchingAC} from './../../redux/actions/profile'
+import {getProfileTC} from './../../redux/actions/profile'
 import Posts from './Posts/Posts'
-// import userPhoto from './../../assets/img/profile130.jpg'
 import s from './Profile.module.css'
 
 import Preloader from '../Common/Preloader'
@@ -13,14 +11,7 @@ function Profile() {
     const {isFetching, profilePage} = useSelector(({profile}) => profile);
 
     useEffect(() => {
-        if(profilePage === null) {
-            dispatch(setFetchingAC(false))
-        axios.get('https://social-network.samuraijs.com/api/1.0/profile/7225')
-            .then((resp) => {
-                dispatch(setProfileAC(resp.data))
-                dispatch(setFetchingAC(true)) 
-            });
-        }
+        profilePage === null && dispatch(getProfileTC(7225))
     },[])
     
     const profile = useSelector(({profile}) => profile.profilePage);
@@ -36,10 +27,10 @@ function Profile() {
                     <div className={s.profile__block}>
                         <div className={s.profile__photoWrapper}>
                             <div className={s.profile__photo}>
-                                <img src={profile.photos.large} alt="profile image"/>
+                                <img src={profilePage.photos.large} alt="profile image"/>
                             </div>
                             <div className={s.profile__detail}>
-                                {profile.fullName}
+                                {profilePage.fullName}
                             </div>
                         </div>
                         
