@@ -1,9 +1,8 @@
 import React from 'react';
 import Comment from './Comment/Comment'
-import userPhoto from './../../../../assets/img/profile130.jpg';
 import s from './Post.module.css';
 
-function Post({postText, likesCount}) {
+const  Post = ({postText, likesCount, userPhoto}) => {
 
     return (
         <div className={s.post}>

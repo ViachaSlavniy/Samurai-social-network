@@ -1,11 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+import {setProfileAC, setFetchingAC} from './../../redux/actions/profile'
 import Posts from './Posts/Posts'
-import userPhoto from './../../assets/img/profile130.jpg'
+// import userPhoto from './../../assets/img/profile130.jpg'
 import s from './Profile.module.css'
 
+import Preloader from '../Common/Preloader'
+
 function Profile() {
+    const dispatch = useDispatch();
+    const {isFetching, profilePage} = useSelector(({profile}) => profile);
+
+    useEffect(() => {
+        if(profilePage === null) {
+            dispatch(setFetchingAC(false))
+        axios.get('https://social-network.samuraijs.com/api/1.0/profile/7225')
+            .then((resp) => {
+                dispatch(setProfileAC(resp.data))
+                dispatch(setFetchingAC(true)) 
+            });
+        }
+    },[])
+    
+    const profile = useSelector(({profile}) => profile.profilePage);
+
     return (
-        <div className={s.profileBlock}>
+        <>
+        {isFetching 
+        ? <div className={s.profileBlock}>
             <div className={s.profile__wrap}>
                 <div className={s.profile}>
                     <div className={s.profile__bg}>
@@ -13,10 +36,10 @@ function Profile() {
                     <div className={s.profile__block}>
                         <div className={s.profile__photoWrapper}>
                             <div className={s.profile__photo}>
-                                <img src={userPhoto} alt="profile image"/>
+                                <img src={profile.photos.large} alt="profile image"/>
                             </div>
                             <div className={s.profile__detail}>
-                                ALEXANDER PETROV
+                                {profile.fullName}
                             </div>
                         </div>
                         
@@ -31,8 +54,11 @@ function Profile() {
                     </div>
                 </div>
             </div>
-            <Posts userPhoto={userPhoto}/>
+            <Posts userPhoto={profile.photos.large}/>
         </div>
+        : <Preloader/>
+        }
+        </>
     )
 }
 

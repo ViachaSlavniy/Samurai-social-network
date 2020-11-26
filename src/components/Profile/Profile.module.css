@@ -21,15 +21,19 @@
     position: absolute;
     margin-left: -21px;
     left: 50%;
-    bottom: 34%;
+    bottom: 44%;
   }
   .profile__photo {
     margin: 0 auto;
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 2px solid #252e4b;
     overflow: hidden;
+  }
+  .profile__photo img {
+    object-fit: contain;
+    max-width: 100%;
   }
   .profile__detail {
     margin-top: 10px;

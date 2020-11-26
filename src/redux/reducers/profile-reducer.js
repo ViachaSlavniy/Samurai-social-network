@@ -1,12 +1,10 @@
-
-const ADD_POST = 'ADD_POST';
-const FOLLOW = 'FOLLOW';
-const UNFOLLOW = 'UNFOLLOW';
-
+import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH } from './../actions/types'
 
 const initialState = {
+    profilePage: null,
+    postText: '',
     postsData: [],
-    comments:[]
+    isFetching: false
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -20,12 +18,32 @@ const profileReducer = (state = initialState, action) => {
                     postsData: [...state.postsData, newPost] 
                 }
             }
-            case FOLLOW: {
+
+            case CHANGE_POST_TEXT: {
     
+                return {
+                    ...state,
+                    postText: action.payload 
+                }
             }
-            case UNFOLLOW: {
-                
+
+            case SET_PROFILE: {
+    
+                return {
+                    ...state,
+                    profilePage: {
+                        ...action.payload
+                    }
+                }
             }
+            case SET_FETCH: {
+    
+                return {
+                    ...state,
+                    isFetching: action.payload
+                }
+            }
+
             default: return state
         }
 }
