@@ -5,7 +5,8 @@ const initialState = {
     profilePage: null,
     postText: '',
     postsData: [],
-    isFetching: false
+    isFetching: false,
+    editMode: false
 }
 
 const profileReducer = (state = initialState, action) => {

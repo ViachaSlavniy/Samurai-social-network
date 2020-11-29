@@ -16,8 +16,7 @@ export const profileAPI = {
         let promise = instance.get(`/profile/${userId}`)
         .then((resp) => resp.data);
         return promise
-    },
-
+    }
 }
 
 export const usersAPI = {

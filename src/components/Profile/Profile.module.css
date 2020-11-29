@@ -2,6 +2,7 @@
   display: grid;
   grid-template-areas:
   "bg"
+  "info"
   "posts"
   "post";
   grid-gap: 10px;
@@ -18,9 +19,9 @@
   }
   .profile__photoWrapper {
     position: absolute;
-    margin-left: -21px;
     left: 50%;
     bottom: 44%;
+    transform: translate(-80%);
   }
   .profile__photo {
     margin: 0 auto;
@@ -43,4 +44,75 @@
     justify-content: space-between;
     padding: 40px 20px 30px; 
     background-color: #1E2745;
+  }
+  .profile__social span a img {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  .btns {
+    position: absolute;
+    right: 1rem;
+    bottom: .5rem;
+  }
+  .btn + .btn {
+    margin-left: .5rem;
+  }
+  .btn {
+    padding: 0;
+
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 50%;
+    
+    background-color: #fff;
+  }
+
+  .btn:focus {
+    outline: none;
+  }
+
+  .btn img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .profileInfo {
+    grid-area: info;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 4rem;
+
+    background-color: #1e2745;
+  }
+  .profileInfo__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 25%;
+
+    font-size: .9rem;
+
+    height: 100%;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+    
+    transition: all .1s linear;
+  }
+  .profileInfo__item:hover {
+    color: #50b5ff;
+  }
+
+  .active {
+    color: #fff;
+    background-color: #50b5ff;
+  }
+
+  .active:hover {
+    color: #fff;
   }

@@ -11,7 +11,57 @@
   }
   .header__search {
     flex-basis: 50%;
+    text-align: center;
+  }
+  .header__search form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header__search input {
+    padding: .3rem 1rem;
+
+    border: none;
+    border-radius: .5rem 0 0 .5rem;
+
+    color: inherit;
+    background-color: #29324f;
+  }
+  .header__search input:focus {
+    outline: none;
+  }
+  .header__search button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 33px;
+
+    border: none;
+    border-radius: 0 .5rem .5rem 0;
+    background-color: #29324f;
+  }
+  .header__search button:focus {
+    outline: none;
+  }
+  .header__search button img {
+    width: 20px;
+    height: 20px;
   }
   .header__info {
     flex-basis: 30%;
+  }
+  .logo__link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .logo__link:focus {
+    text-decoration: none;
+  }
+  .logo {
+    padding: 0;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
   }

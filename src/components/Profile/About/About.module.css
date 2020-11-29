@@ -1,0 +1,93 @@
+#checkbox {
+    background-color: #29324f;
+}
+
+.aboutWrap {
+    display: flex;
+    padding: 0 0 1rem;
+
+    font-size: .9rem;
+    
+    background-color: #1E2745;
+}
+.aboutLinks {
+    padding: 1rem;
+    flex-basis: 25%;
+
+    color: #50b5ff;
+    cursor: pointer;
+}
+.aboutLink {
+    padding: .5rem 1rem;
+
+    border-radius: 5px;
+}
+.activeLink {
+    background: #29324f;
+}
+.aboutInf {
+    flex-basis: 75%;
+}
+.title {
+    margin-bottom: .5rem;
+    padding: .7rem 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    border-bottom: 1px solid #29324f;
+}
+form {
+    margin-bottom: 1.5rem;
+}
+.formItem {
+    margin: .5rem 0;
+}
+.formItem label {
+    margin: 0;
+    margin-right: 1rem;
+    width: 160px;
+}
+.formItem input {
+    padding: .3rem 1rem;
+
+    border: none;
+
+    color: inherit;
+    background-color: #29324f;
+}
+.textarea {
+    display: flex;
+    align-items: center;
+}
+.formItem textarea {
+    margin: 0.2rem 0;
+    padding: .3rem 1rem;
+
+    border: none;
+
+    color: inherit;
+    background-color: #29324f;
+    resize: none;
+}
+.formItem textarea:focus {
+    outline: none;
+}
+.formItem input:focus {
+    outline: none;
+  }
+.btn {
+    padding: .3rem 3rem;
+    margin: 0 auto;
+  
+    background-color: #2aa3fb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all .2s linear;
+  
+}
+
+.btn:hover {
+background-color: #fff;
+color:#2aa3fb;
+}

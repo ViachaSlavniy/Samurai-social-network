@@ -5,7 +5,7 @@ import Post from './Post/Post';
 import s from './Posts.module.css';
 
 
-function Posts({userPhoto}) {
+function Posts({userPhoto, unknownUser}) {
     const dispatch = useDispatch();
     const refPostArea = React.createRef();
 
@@ -29,7 +29,9 @@ function Posts({userPhoto}) {
             <div className={s.posts__blockTitle}>Create Post</div>
             <div className={s.posts__form}>
             <div className={s.posts__formImg}>
-                <img src={userPhoto} alt="User image"/>
+                <img src={userPhoto 
+                    ? userPhoto 
+                    : unknownUser} alt="User image"/>
             </div>
                 <textarea onChange={onPostTextChange} ref={refPostArea} className={s.posts__textarea} cols="50" rows="5" placeholder="Wrire something here..."/>
             </div>

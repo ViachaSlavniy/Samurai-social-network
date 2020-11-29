@@ -4,7 +4,7 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
-import Profile from './components/Profile/Profile';
+import ProfileWithRouter from './components/Profile/Profile';
 import Sidebar from './components/Sidebar/Sidebar';
 import Messages from './components/Messages/Messages';
 import Newsfeed from './components/News/News';
@@ -18,11 +18,11 @@ function App() {
       <Nav/>
         <div className="app-wrapper-content">
           <Switch>
-            <Route path="/profile" render={() => <Profile/>} />
+            <Route path="/profile/:userId?" render={() => <ProfileWithRouter/>} />
             <Route path="/messages" render={() => <Messages/>} />
             <Route path="/news" render={() => <Newsfeed/>} />
             <Route path="/users" render={() => <Users/>} />
-            <Route path="/" render={() => <Profile/>} />
+            <Route path="/" render={() => <ProfileWithRouter/>} />
           </Switch>
         </div>
       <Sidebar/>
