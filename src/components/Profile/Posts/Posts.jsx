@@ -5,7 +5,7 @@ import Post from './Post/Post';
 import s from './Posts.module.css';
 
 
-function Posts({userPhoto, unknownUser}) {
+function Posts({isAuth, userPhoto, unknownUser}) {
     const dispatch = useDispatch();
     const refPostArea = React.createRef();
 
@@ -25,6 +25,9 @@ function Posts({userPhoto, unknownUser}) {
 
     return (
         <>
+        {isAuth 
+        ? 
+        <>
         <div className={s.posts__block}>
             <div className={s.posts__blockTitle}>Create Post</div>
             <div className={s.posts__form}>
@@ -38,6 +41,9 @@ function Posts({userPhoto, unknownUser}) {
             <button onClick={handlePostClick} className={s.posts__btn} type="submit">Post</button>
         </div>
         {postsNewArr}
+        </>
+        : 'NEW BLOCK'
+        }
       </>
     )
 }

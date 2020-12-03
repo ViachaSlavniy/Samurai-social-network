@@ -1,5 +1,6 @@
 import { combineReducers, createStore, compose } from 'redux';
 import { applyMiddleware } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
 import profile from './reducers/profile-reducer';
 import users from './reducers/users-reducer';
@@ -10,7 +11,8 @@ const reducers = combineReducers({
     profile,
     users,
     messages,
-    auth
+    auth,
+    form: formReducer
 })
 
 const store = createStore(reducers, 

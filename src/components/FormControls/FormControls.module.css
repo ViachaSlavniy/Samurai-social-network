@@ -1,0 +1,21 @@
+.inputBlock {
+    position: relative;
+}
+.error {
+    border: 2px solid red;
+}
+.inputBlock span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    color: #fff;
+    background-color: rgba(255,0,0, .9);
+}

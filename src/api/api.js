@@ -8,12 +8,31 @@ const instance = axios.create({
 
 
 export const authAPI = {
-
+    authMe(){
+        let promise = instance.get(`/auth/me`)
+        .then((resp) => resp.data);
+        return promise
+    },
+    login(logindata){
+        let promise = instance.post(`/auth/login`, logindata)
+        .then((resp) => resp.data);
+        return promise
+    },
+    logout(){
+        let promise = instance.delete(`/auth/login`)
+        .then((resp) => resp.data);
+        return promise
+    }
 }
 
 export const profileAPI = {
     getProfile(userId){
         let promise = instance.get(`/profile/${userId}`)
+        .then((resp) => resp.data);
+        return promise
+    },
+    setProfileInfo(profile){
+        let promise = instance.put(`/profile`, profile)
         .then((resp) => resp.data);
         return promise
     }

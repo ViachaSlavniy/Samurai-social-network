@@ -1,4 +1,4 @@
-import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH } from './../actions/types';
+import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH, SET_EDIT_MODE } from './../actions/types';
 
 
 const initialState = {
@@ -43,6 +43,12 @@ const profileReducer = (state = initialState, action) => {
                 return {
                     ...state,
                     isFetching: action.payload
+                }
+            }
+            case SET_EDIT_MODE: {
+                return {
+                    ...state,
+                    editMode: action.payload
                 }
             }
 

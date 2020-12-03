@@ -50,7 +50,21 @@
     height: 20px;
   }
   .header__info {
-    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-basis: 20%;
+  }
+  .userPhoto {
+    width: 50px;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .userPhoto img {
+    object-fit: cover;
+    max-width: 100%;
   }
   .logo__link {
     text-decoration: none;

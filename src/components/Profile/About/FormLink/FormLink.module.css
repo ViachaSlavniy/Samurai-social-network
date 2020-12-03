@@ -1,0 +1,38 @@
+.formItem {
+    margin: .5rem 0;
+}
+.formItem label {
+    margin: 0;
+    margin-right: 1rem;
+    width: 160px;
+}
+.formItem input {
+    width: 300px;
+    padding: .3rem 1rem;
+
+    border: none;
+
+    color: inherit;
+    background-color: #29324f;
+}
+.textarea {
+    display: flex;
+    align-items: center;
+}
+.formItem textarea {
+    width: 300px;
+    margin: 0.2rem 0;
+    padding: .3rem 1rem;
+
+    border: none;
+
+    color: inherit;
+    background-color: #29324f;
+    resize: none;
+}
+.formItem textarea:focus {
+    outline: none;
+}
+.formItem input:focus {
+    outline: none;
+}

@@ -1,4 +1,4 @@
-import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH } from './types';
+import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH, SET_EDIT_MODE } from './types';
 import {profileAPI} from './../../api/api';
 
 
@@ -30,6 +30,13 @@ export const setFetchingAC = (boolean) => {
     }
 }
 
+export const setEditModeAC = (boolean) => {
+    return {
+        type: SET_EDIT_MODE,
+        payload: boolean
+    }
+}
+
 // THUNK CREATORS
 
 export const getProfileTC = (id) => (dispatch) => {
@@ -37,6 +44,12 @@ export const getProfileTC = (id) => (dispatch) => {
         dispatch(setFetchingAC(false))
         dispatch(setProfileAC(data))
         dispatch(setFetchingAC(true)) 
+    })
+}
+
+export const setProfileInfoTC = (obj) => (dispatch) => {
+    profileAPI.setProfileInfo(obj).then((data) => {
+        console.log(data, 'THUNK SUCSESS')
     })
 }
 

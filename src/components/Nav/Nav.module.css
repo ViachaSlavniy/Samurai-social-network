@@ -5,13 +5,14 @@
     text-decoration: none;
   }
   .activeLink {
+    color: #50b5ff !important;
     background: #29324f;
   }
   .nav__item {
     display: block;
     padding: 10px;
     width: 100%;
-    color: #8c91b6;
+    color: inherit;
     transition: color .2s ease-in;
   }
   .nav__item:hover {
