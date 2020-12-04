@@ -16,7 +16,7 @@ import youtube from './../../assets/icons/youtube.svg';
 import edit from './../../assets/icons/pencil.svg'
 // import settings from './../../assets/icons/settings.svg'
 import About from './About/About';
-import { authMeTC } from '../../redux/actions/auth';
+import { setAuthUserDataTC } from '../../redux/actions/auth';
 
 
 
@@ -31,7 +31,7 @@ const Profile = (props) => {
 
     useEffect(() => {
         if(!id) {
-            dispatch(authMeTC())
+            dispatch(setAuthUserDataTC())
         }
         if(!userUrl) {
             dispatch(getProfileTC(id))

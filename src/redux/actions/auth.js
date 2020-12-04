@@ -1,21 +1,14 @@
-import {authAPI} from './../../api/api'
-import {AUTH_ME, LOG_OUT} from './types'
+import {authAPI} from './../../api/api';
+import {SET_AUTH_USER_DATA, LOG_OUT} from './types';
 
 
 
-export const authMeAC = (obj) => {
+export const setAuthUserDataAC = (obj) => {
     return {
-        type: AUTH_ME,
+        type: SET_AUTH_USER_DATA,
         payload: obj
     }
 }
-
-// export const loginAC = (userId) => {
-//     return {
-//         type: LOGIN,
-//         payload: userId
-//     }
-// }
 
 export const logOutAC = () => {
     return {
@@ -26,11 +19,11 @@ export const logOutAC = () => {
 
 //THUNKCREATOR
 
-export const authMeTC = () => (dispatch) => {
-    authAPI.authMe()
+export const setAuthUserDataTC = () => (dispatch) => {
+    return authAPI.authMe()
         .then(resp => {
             if(resp.resultCode === 0) {
-                dispatch(authMeAC(resp.data))
+                dispatch(setAuthUserDataAC(resp.data))
             }
         })
 }
@@ -39,7 +32,7 @@ export const loginTC = (loginData) => (dispatch) => {
     authAPI.login(loginData)
         .then(resp => {
             if(resp.resultCode === 0){
-                dispatch(authMeTC())
+                dispatch(setAuthUserDataTC())
             } 
             // else if (resp.resultCode === 1) {
             //     console.log(resp.messages)

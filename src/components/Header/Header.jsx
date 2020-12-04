@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import logo from './../../assets/img/logo2.png';
 import loupe from './../../assets/icons/loupe.svg';
+import unknown from './../../assets/img/unknown150.jpg'
 import { logOutTC } from '../../redux/actions/auth';
 
 function Header() {
@@ -37,13 +38,13 @@ function Header() {
             ? <div className={s.header__info}>
                 <div className={s.userName}>{profilePage && profilePage.fullName}</div>
                 <div className={s.userPhoto}>
-                    <img src={profilePage && profilePage.photos.small} alt="profile img"/>
+                    <img src={profilePage ? profilePage.photos.small : unknown} alt="profile img"/>
                 </div>
                 <div className={s.btn}>
                     <Link onClick={logout} to={'/login'}>Logout</Link>
                 </div>
             </div>
-            :<div>
+            :<div className={s.header__info}>
                 <Link to={'/login'}>LogIn</Link>
             </div>
             }

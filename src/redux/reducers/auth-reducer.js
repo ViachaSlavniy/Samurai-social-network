@@ -1,17 +1,16 @@
-import {AUTH_ME, LOGIN, LOG_OUT} from './../actions/types';
+import {SET_AUTH_USER_DATA, LOG_OUT} from './../actions/types';
 
 const initialState = {
     isAuth: false,
     id: null,
-    // email: null,
-    // login: null
+    email: null,
+    login: null
 }
 
 const authReducer = (state = initialState, action) => {
     switch(action.type) {
 
-        case AUTH_ME: {
-
+        case SET_AUTH_USER_DATA: {
             return {
                 ...state,
                 id: action.payload.id,
@@ -33,6 +32,8 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 id: null,
+                email: null,
+                login: null,
                 isAuth: false
             }
         }

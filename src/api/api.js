@@ -9,50 +9,42 @@ const instance = axios.create({
 
 export const authAPI = {
     authMe(){
-        let promise = instance.get(`/auth/me`)
+        return instance.get(`/auth/me`)
         .then((resp) => resp.data);
-        return promise
     },
     login(logindata){
-        let promise = instance.post(`/auth/login`, logindata)
+        return instance.post(`/auth/login`, logindata)
         .then((resp) => resp.data);
-        return promise
     },
     logout(){
-        let promise = instance.delete(`/auth/login`)
+        return instance.delete(`/auth/login`)
         .then((resp) => resp.data);
-        return promise
     }
 }
 
 export const profileAPI = {
     getProfile(userId){
-        let promise = instance.get(`/profile/${userId}`)
+        return instance.get(`/profile/${userId}`)
         .then((resp) => resp.data);
-        return promise
     },
     setProfileInfo(profile){
-        let promise = instance.put(`/profile`, profile)
+        return instance.put(`/profile`, profile)
         .then((resp) => resp.data);
-        return promise
     }
 }
 
 export const usersAPI = {
     getUsers(currentPage, pageSize){
-        let promise = instance.get(`/users?page=${currentPage}&count=${pageSize}`)
+        return instance.get(`/users?page=${currentPage}&count=${pageSize}`)
         .then((resp) => resp.data);
-        return promise
     },
     follow(userId){
-        let promise = instance.post(`/follow/${userId}`)
+        return instance.post(`/follow/${userId}`)
         .then((resp) => resp.data);
-        return promise
     },
     unfollow(userId){
-        let promise = instance.delete(`/follow/${userId}`)
+        return instance.delete(`/follow/${userId}`)
         .then((resp) => resp.data);
-        return promise
     }
 }
 

@@ -10,7 +10,8 @@ function Messages() {
     return (
         <>
         {isAuth 
-        ?<div className={s.item} >
+        ?
+        <div className={s.item} >
             Messages
         </div>
         : <Redirect to={"/login"}/>

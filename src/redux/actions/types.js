@@ -1,5 +1,10 @@
+//App types
+
+export const INITIALIZE_APP = 'INITIALIZE_APP';
+
 //Auth types
-export const AUTH_ME = 'AUTH_ME';
+
+export const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA';
 export const LOGIN = 'LOGIN';
 export const LOG_OUT = 'LOG_OUT';
 
@@ -10,8 +15,6 @@ export const CHANGE_POST_TEXT = 'CHANGE_POST_TEXT';
 export const SET_PROFILE = 'SET_PROFILE';
 export const SET_FETCH = 'SET_FETCH';
 export const SET_EDIT_MODE = 'SET_EDIT_MODE';
-
-
 
 //Users types
 
