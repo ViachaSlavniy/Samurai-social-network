@@ -1,4 +1,4 @@
-import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE} from './../actions/types'
+import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SEARCH_USERS, SET_FRIENDS} from './../actions/types'
 
 const initialState = {
     items: [],
@@ -7,7 +7,15 @@ const initialState = {
     error: null,
     currentPage: 1,
     pageSize: 10,
-    portionSize: 10
+    portionSize: 10,
+    searchResult: {
+        items:[],
+        totalCount: null
+    },
+    friends: {
+        items: [],
+        totalCount: 0,
+    }
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -16,6 +24,12 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.payload
+            }
+        }
+        case SET_FRIENDS: {
+            return {
+                ...state,
+                friends: {...action.payload}
             }
         }
         case FOLLOW: {
@@ -53,6 +67,15 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 currentPage: action.payload
+            }
+        }
+
+        case SEARCH_USERS: {
+            return {
+                ...state,
+                searchResult: {
+                    ...action.payload
+                }
             }
         }
 

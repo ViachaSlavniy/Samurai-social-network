@@ -14,6 +14,7 @@ import {initializeApp} from './redux/actions/app'
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Preloader from './components/Common/Preloader';
+import Friends from './components/Friends/Friends';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/profile/:userId?" render={() => <ProfileWithRouter/>} />
           <Route path="/messages" render={() => <Messages/>} />
           <Route path="/news" render={() => <Newsfeed/>} />
+          <Route path="/friends" render={() => <Friends/>}/>
           <Route path="/users" render={() => <Users/>} />
           <Route path="/login" render={() => <Login/>} />
           <Redirect from="/" to="/profile" />

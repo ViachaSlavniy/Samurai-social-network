@@ -1,10 +1,22 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import s from './Sidebar.module.css';
+import SidebarItem from './SidebarItem/SidebarItem';
+import { getFriendsTC } from './../../redux/actions/users';
+import { useDispatch, useSelector } from 'react-redux';
 
-function Sidebar() {
+const Sidebar = () => {
+    const dispatch = useDispatch();
+
+    const items = useSelector(({users}) => users.friends.items)
+    useEffect(() => {
+        dispatch(getFriendsTC())
+    },[])
+
+    const friendList = items.map(item => <SidebarItem key={item.id} id={item.id} name={item.name} photo={item.photos.large}/>)
+    
     return (
         <aside className={s.sidebar__friends}>
-            FRIENDS
+            {friendList}
         </aside>
     )
 }

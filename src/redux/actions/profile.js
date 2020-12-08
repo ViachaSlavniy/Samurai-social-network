@@ -1,5 +1,7 @@
 import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH, SET_EDIT_MODE } from './types';
 import {profileAPI} from './../../api/api';
+import {setAuthUserInfoAC} from './auth';
+import {stopSubmit} from 'redux-form';
 
 
 export const addPostAC = (post) => {
@@ -39,17 +41,29 @@ export const setEditModeAC = (boolean) => {
 
 // THUNK CREATORS
 
+export const getProfileForAuthTC = (id) => (dispatch) => {
+    return profileAPI.getProfile(id)
+        .then((data) => {
+            dispatch(setAuthUserInfoAC(data.fullName, data.photos.large))
+        })
+}
+
 export const getProfileTC = (id) => (dispatch) => {
-    profileAPI.getProfile(id).then((data) => {
-        dispatch(setFetchingAC(false))
-        dispatch(setProfileAC(data))
-        dispatch(setFetchingAC(true)) 
-    })
+    return profileAPI.getProfile(id)
+        .then((data) => {
+            dispatch(setFetchingAC(false))
+            dispatch(setProfileAC(data))
+            dispatch(setFetchingAC(true)) 
+        })
 }
 
 export const setProfileInfoTC = (obj) => (dispatch) => {
-    profileAPI.setProfileInfo(obj).then((data) => {
-        console.log(data, 'THUNK SUCSESS')
-    })
+    return profileAPI.setProfileInfo(obj)
+            .then((resp) => {
+                if(resp.resultCode === 1) {
+                    const message = resp.messages.length > 0 ? resp.messages[0] : 'Some error';
+                    dispatch(stopSubmit('about', {_error: message}))
+                }
+            })
 }
 

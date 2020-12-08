@@ -1,81 +1,73 @@
 .header {
-    display: flex;
-    padding: 0 20px;
-    justify-content: space-between;
-    align-items: center;
-    grid-area: header;  
-    background-color: #1E2745;
-  }
-  .header__logo {
-    flex-basis: 20%;
-  }
-  .header__search {
-    flex-basis: 50%;
-    text-align: center;
-  }
-  .header__search form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .header__search input {
-    padding: .3rem 1rem;
+  display: flex;
+  padding: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: header;  
+  background-color: #1E2745;
+}
+.header__logo {
+  flex-basis: 20%;
+}
+.header__info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-basis: 10%;
+}
+.header__infoItem {
+  margin-right: 1rem;
+}
+.userPhoto {
+  width: 50px;
+  height: 50px;
+  border: 1px solid;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.userPhoto img {
+  object-fit: cover;
+  max-width: 100%;
+}
+.logo__link {
+  text-decoration: none;
+  color: inherit;
+}
+.logo__link:focus {
+  text-decoration: none;
+}
+.logo {
+  padding: 0;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+}
+.btn a{
+  display: block;
+  padding: .3rem .5rem;
 
-    border: none;
-    border-radius: .5rem 0 0 .5rem;
+  background-color: #2aa3fb;
+  color: #fff;
 
-    color: inherit;
-    background-color: #29324f;
-  }
-  .header__search input:focus {
-    outline: none;
-  }
-  .header__search button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  text-decoration: none;
 
-    width: 50px;
-    height: 33px;
+  border: none;
+  border-radius: 5px;
+  transition: all .2s linear;
 
-    border: none;
-    border-radius: 0 .5rem .5rem 0;
-    background-color: #29324f;
-  }
-  .header__search button:focus {
-    outline: none;
-  }
-  .header__search button img {
-    width: 20px;
-    height: 20px;
-  }
-  .header__info {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-basis: 20%;
-  }
-  .userPhoto {
-    width: 50px;
-    height: 50px;
-    border: 1px solid;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-  .userPhoto img {
-    object-fit: cover;
-    max-width: 100%;
-  }
-  .logo__link {
-    text-decoration: none;
-    color: inherit;
-  }
-  .logo__link:focus {
-    text-decoration: none;
-  }
-  .logo {
-    padding: 0;
-    display: inline-block;
-    width: 120px;
-    height: 120px;
-  }
+  cursor: pointer;
+}
+
+.btnLogout a {
+  background-color: #FE9C87;
+}
+
+.btn a:hover {
+  background-color: #fff;
+  color:#2aa3fb;
+}
+
+.btnLogout a:hover {
+  background-color: #fff;
+  color:#FE9C87;
+}

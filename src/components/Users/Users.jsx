@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import s from './Users.module.css'
 import usersBg from './../../assets/img/usersBg.jpg';
-import { getUsersTC } from '../../redux/actions/users';
+import { getUsersTC, setLoadAC } from '../../redux/actions/users';
 import { useDispatch, useSelector } from 'react-redux';
 import Preloader from '../Common/Preloader';
 import UserCard from './UsersCard/UserCard';
@@ -9,8 +9,7 @@ import Paginator from '../Common/Pagination/Pagination';
 
 function Users() {
     const dispatch = useDispatch();
-    const {isLoaded, currentPage, pageSize} = useSelector(({users}) => users);
-
+    const {isLoaded, currentPage, pageSize, totalCount, portionSize} = useSelector(({users}) => users);
     useEffect(() => {
         dispatch(getUsersTC(currentPage, pageSize))
     },[currentPage])
@@ -29,7 +28,11 @@ function Users() {
                 </div>
             </div>
             <div className="row justify-content-center">
-                <Paginator justify-items-center/>
+                <Paginator totalCount={totalCount}  
+                currentPage={currentPage} 
+                pageSize={pageSize} 
+                portionSize={portionSize}
+                justify-items-center/>
             </div>
             {isLoaded
             ?<div className={s.usersContainer}>

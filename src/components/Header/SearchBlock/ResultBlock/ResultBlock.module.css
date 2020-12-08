@@ -1,0 +1,29 @@
+.header__searchResult {
+    display: none;
+    position: absolute;
+    top: 3.5rem;
+    z-index: 10;
+    opacity: 0;
+  
+    width: 285px;
+    background-color: #1e2745;
+    box-shadow: 0 0 10px #0f1322;
+}
+.header__searchMoreResults {
+  padding: .5rem 1rem;
+}
+.searchResultshow{
+  display: block;
+  animation: showBlock .1s linear forwards;
+}
+
+@keyframes showBlock {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}

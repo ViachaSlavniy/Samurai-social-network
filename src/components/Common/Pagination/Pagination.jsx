@@ -1,12 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setCurrentPageAC } from '../../../redux/actions/users'
 
-function Paginator() {
+function Paginator({totalCount, currentPage, pageSize, portionSize}) {
     const dispatch = useDispatch()
-    const {totalCount, currentPage, pageSize, portionSize} = useSelector(({users}) => users)
 
     // Получаем кол-во всех страниц в пагинации
     const pagesCount = Math.ceil(totalCount/pageSize);

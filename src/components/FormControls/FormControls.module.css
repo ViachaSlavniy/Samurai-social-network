@@ -4,6 +4,9 @@
 .error {
     border: 2px solid red;
 }
+.errorBlock {
+    color: red;
+}
 .inputBlock span {
     display: inline-flex;
     align-items: center;

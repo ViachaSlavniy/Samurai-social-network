@@ -60,13 +60,14 @@ const Profile = (props) => {
                 <div className={s.profile__wrap}>
                     <div className={s.profile}>
                         <div className={s.profile__bg}>
-                            <div className={s.btns}>
-                                {isAuth &&
+                            {profile.userId === id
+                            ? <div className={s.btns}>
                                 <button onClick={onEditMode} className={s.btn}>
                                     <img src={edit} alt="edit"/>
                                 </button>
-                                }
                             </div>
+                            : ''
+                            }
                         </div>
                         <div className={s.profile__block}>
                             <div className={s.profile__photoWrapper}>
@@ -142,7 +143,7 @@ const Profile = (props) => {
                     }
                 </div>
                 {
-                    activeInfoItem === 0 && <Posts isAuth={isAuth} userPhoto={profile.photos.large} unknownUser={unknown}/>
+                    activeInfoItem === 0 && <Posts userPhoto={profile.photos.large} unknownUser={unknown}/>
                 }
                 {
                     activeInfoItem === 1 && <About/>

@@ -1,5 +1,9 @@
 import {authAPI} from './../../api/api';
-import {SET_AUTH_USER_DATA, LOG_OUT} from './types';
+import {captchaTC} from './security'
+import {SET_AUTH_USER_DATA, LOG_OUT, SET_USER_INFO} from './types';
+import {stopSubmit} from 'redux-form';
+import { getProfileForAuthTC } from './profile';
+import { getFriendsTC } from './users';
 
 
 
@@ -10,6 +14,14 @@ export const setAuthUserDataAC = (obj) => {
     }
 }
 
+export const setAuthUserInfoAC = (name, photoURL) => {
+    return {
+        type: SET_USER_INFO,
+        userName: name,
+        userPhotoURL: photoURL
+    }
+}
+
 export const logOutAC = () => {
     return {
         type: LOG_OUT
@@ -17,13 +29,18 @@ export const logOutAC = () => {
 }
 
 
+
+
 //THUNKCREATOR
+
 
 export const setAuthUserDataTC = () => (dispatch) => {
     return authAPI.authMe()
         .then(resp => {
             if(resp.resultCode === 0) {
-                dispatch(setAuthUserDataAC(resp.data))
+                const userId = resp.data.id;
+                dispatch(getProfileForAuthTC(userId));
+                dispatch(setAuthUserDataAC(resp.data));
             }
         })
 }
@@ -31,12 +48,17 @@ export const setAuthUserDataTC = () => (dispatch) => {
 export const loginTC = (loginData) => (dispatch) => {
     authAPI.login(loginData)
         .then(resp => {
-            if(resp.resultCode === 0){
-                dispatch(setAuthUserDataTC())
+            if(resp.resultCode === 0) {
+                dispatch(setAuthUserDataTC());
+                dispatch(getFriendsTC());
             } 
-            // else if (resp.resultCode === 1) {
-            //     console.log(resp.messages)
-            // }
+            else {
+                if(resp.resultCode === 10) {
+                    dispatch(captchaTC())
+                }
+                const messages = resp.messages.length > 0 ? resp.messages[0] : "Some error";
+                dispatch(stopSubmit('login', {_error: messages}));
+            }
             
         })
 }
@@ -49,3 +71,4 @@ export const logOutTC = () => (dispatch) => {
             }
         })
 }
+

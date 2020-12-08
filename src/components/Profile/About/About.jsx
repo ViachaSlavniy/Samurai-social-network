@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import s from './About.module.css';
 import AboutReduxForm from './AboutForm';
-import {setProfileInfoTC} from './../../../redux/actions/profile';
+import {setProfileInfoTC, setEditModeAC} from './../../../redux/actions/profile';
 
 
 function About() {
@@ -11,11 +11,13 @@ function About() {
     const [activeLink, setActiveLink] = useState(0);
     const activeLinks = ['Contact and Basic info', 'Work and Education'];
     
-    const editMode = useSelector(({profile}) => profile);
+    // const editMode = useSelector(({profile}) => profile);
 
     const onSubmit = (values) => {
-        console.log(values)
         dispatch(setProfileInfoTC(values))
+            .then(() => {
+                dispatch(setEditModeAC(false))
+            })
     }
 
     return (

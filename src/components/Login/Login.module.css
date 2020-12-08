@@ -19,6 +19,7 @@
     margin: .5rem 0;
 }
 .loginBlock label {
+    margin: 0;
     width: 170px;
 }
 .loginBlock input {
@@ -32,6 +33,15 @@
 }
 .loginBlock input:focus {
     outline: none;
+}
+.rememberMe {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.captchaBlock img {
+    display: block;
+    margin: auto;
 }
 
 .btn {

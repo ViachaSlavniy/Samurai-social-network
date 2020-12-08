@@ -1,4 +1,4 @@
-import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE} from './types';
+import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SEARCH_USERS, SET_FRIENDS} from './types';
 import { usersAPI } from './../../api/api';
 
 
@@ -7,6 +7,13 @@ import { usersAPI } from './../../api/api';
 export const setUsersAC = (obj) => {
     return {
         type: SET_USERS,
+        payload: obj
+    }
+}
+
+export const setFriendsAC = (obj) => {
+    return {
+        type: SET_FRIENDS,
         payload: obj
     }
 }
@@ -39,14 +46,30 @@ export const setCurrentPageAC = (page) => {
     }
 }
 
+export const searchAC = (obj) => {
+    return {
+        type: SEARCH_USERS,
+        payload: obj
+    }
+}
+
 // THUNK CREATORS
 
 export const getUsersTC = (currentPage, pageSize) => (dispatch) => {
     usersAPI.getUsers(currentPage, pageSize)
             .then((data) => {
-        dispatch(setLoadAC(false))
-        dispatch(setUsersAC(data))
-        dispatch(setLoadAC(true))
+                dispatch(setLoadAC(false))
+                dispatch(setUsersAC(data))
+                dispatch(setLoadAC(true))
+            })
+}
+
+export const getFriendsTC = (currentPage = 1, pageSize = 10) => (dispatch) => {
+    usersAPI.getFriends(currentPage, pageSize)
+        .then((data) => {
+            dispatch(setLoadAC(false))
+            dispatch(setFriendsAC(data))
+            dispatch(setLoadAC(true))
     })
 }
 
@@ -66,4 +89,11 @@ export const unfollowTC = (userId) => (dispatch) => {
                 dispatch(unfollowAC(userId));
             }
     })
+}
+
+export const searchTС = (userName) => (dispatch) => {
+    usersAPI.searchUser(userName)
+            .then((resp) => {
+                dispatch(searchAC(resp));
+            })
 }

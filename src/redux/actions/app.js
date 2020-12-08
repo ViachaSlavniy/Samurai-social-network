@@ -1,5 +1,6 @@
 import {INITIALIZE_APP} from './types';
 import {setAuthUserDataTC} from './auth'
+import { getFriendsTC } from './users';
 
 
 const initializeAppAC = () => {
@@ -13,7 +14,6 @@ const initializeAppAC = () => {
 
 export const initializeApp = () => (dispatch) => {
     let promise = dispatch(setAuthUserDataTC());
-    //dispatch(somethings)
     //dispatch(somethings)
     Promise.all([promise])
         .then(() => {

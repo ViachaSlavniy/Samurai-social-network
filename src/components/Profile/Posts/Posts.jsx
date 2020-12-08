@@ -5,7 +5,7 @@ import Post from './Post/Post';
 import s from './Posts.module.css';
 
 
-function Posts({isAuth, userPhoto, unknownUser}) {
+function Posts({userPhoto, unknownUser}) {
     const dispatch = useDispatch();
     const refPostArea = React.createRef();
 
@@ -23,9 +23,14 @@ function Posts({isAuth, userPhoto, unknownUser}) {
         dispatch(postChangeAC(refPostArea.current.value));
     }
 
+    // Show Create post or other user posts
+
+    const {id} = useSelector(({auth}) => auth)
+    const {userId} = useSelector(({profile}) => profile.profilePage)
+
     return (
         <>
-        {isAuth 
+        {id === userId
         ? 
         <>
         <div className={s.posts__block}>

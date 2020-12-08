@@ -1,5 +1,6 @@
 .formItem {
     margin: .5rem 0;
+    display: flex;
 }
 .formItem label {
     margin: 0;

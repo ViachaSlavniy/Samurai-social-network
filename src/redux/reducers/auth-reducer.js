@@ -1,10 +1,13 @@
-import {SET_AUTH_USER_DATA, LOG_OUT} from './../actions/types';
+import {SET_AUTH_USER_DATA, LOG_OUT, SET_CAPTCHA, SET_USER_INFO} from './../actions/types';
 
 const initialState = {
     isAuth: false,
     id: null,
     email: null,
-    login: null
+    login: null,
+    captcha: null,
+    userPhotoURL: null,
+    userName: null
 }
 
 const authReducer = (state = initialState, action) => {
@@ -20,13 +23,20 @@ const authReducer = (state = initialState, action) => {
             }
         }
 
-        // case LOGIN: {
-        //     return {
-        //         ...state,
-        //         id: action.payload,
-        //         isAuth: true
-        //     }
-        // }
+        case SET_USER_INFO: {
+            return {
+                ...state,
+                userName: action.userName,
+                userPhotoURL: action.userPhotoURL
+            }
+        }
+
+        case SET_CAPTCHA: {
+            return {
+                ...state,
+                captcha: action.payload
+            }
+        }
 
         case LOG_OUT: {
             return {
