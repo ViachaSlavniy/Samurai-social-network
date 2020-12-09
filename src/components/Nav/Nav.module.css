@@ -1,3 +1,5 @@
+  
+  
   .nav li {
     list-style-type: none;
   }
@@ -6,7 +8,10 @@
   }
   .activeLink {
     color: #50b5ff !important;
-    background: #29324f;
+    background-color: #29324f;
+  }
+  .activeLink .imgSvg {
+    background-color: #50b5ff;
   }
   .nav__item {
     display: flex;
@@ -19,16 +24,36 @@
   .nav__item:hover {
     color: #50b5ff;
   }
-  .nav__item:hover  svg .navItemLogoImg {
+  .nav__item:hover .navItemLogoImg {
     fill: #50b5ff;
   }
-  .navItemLogoImg {
+  .nav__item:hover .imgSvg {
+    background-color: #50b5ff;
+  }
+  .imgSvg {
     margin-right: .5rem;
-    display: block;
     width: 1rem;
     height: 1rem;
-    
-    transition: color .2s ease-in;
+    background-color:#8c91b6;
+    transition: all .2s ease-in;
+  }
+  #profileUser {
+    mask-image: url(./../../assets/icons/user.svg);
+  }
+  #news {
+    mask-image: url(./../../assets/icons/news.svg);
+  }
+  #messages {
+    mask-image: url(./../../assets/icons/messages.svg);
+  }
+  #friends {
+    mask-image: url(./../../assets/icons/friends1.svg);
+  }
+  #users {
+    mask-image: url(./../../assets/icons/group.svg);
+  }
+  #communities {
+    mask-image: url(./../../assets/icons/community.svg);
   }
   .sidebar__nav {
     grid-area: nav;

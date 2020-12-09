@@ -30,7 +30,7 @@ function Friends() {
                 <img src={usersBg} alt="user bg"/>
                 <div className={s.bgTitle}>
                     <div>
-                        <h1>Friend List</h1>
+                        <h1>Friends</h1>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,8 @@ import { setAuthUserDataTC } from '../../redux/actions/auth';
 
 
 
-const Profile = (props) => {
+const Profile = React.memo((props) => {
+    console.log('RENDER PROFILE')
     const dispatch = useDispatch();
 
     const {isAuth, id} = useSelector(({auth}) => auth)
@@ -163,7 +164,7 @@ const Profile = (props) => {
         }
         </>
     )
-}
+})
 
 const ProfileWithRouter = withRouter(Profile);
 

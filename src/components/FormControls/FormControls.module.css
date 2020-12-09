@@ -22,3 +22,21 @@
     color: #fff;
     background-color: rgba(255,0,0, .9);
 }
+.textArea {
+    margin: 0.2rem 0;
+    padding: .3rem 1rem;
+
+    border: none;
+
+    color: inherit;
+    background-color: #29324f;
+    resize: none;
+}
+.input {
+    padding: .3rem 1rem;
+
+    border: none;
+
+    color: inherit;
+    background-color: #29324f;
+}

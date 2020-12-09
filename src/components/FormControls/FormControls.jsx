@@ -8,9 +8,17 @@ export const Element = ({
     meta: { touched, error }}) => {
 
     return (
-        <div className={s.inputBlock}>
-            <input {...input} className={touched && error ? s.error : ''} placeholder={placeholder} type={type}/>
+        <>
+        {type === 'textarea'
+        ?<div>
+            <textarea {...input} className={`${touched && error ? s.error : ''} ${s.textArea}`} placeholder={placeholder}/>
             {error && <span>!</span>}
         </div> 
+        :<div>
+            <input {...input} className={`${touched && error ? s.error : ''} ${s.input}`} placeholder={placeholder} type={type}/>
+            {error && <span>!</span>}
+        </div> 
+        }
+        </>
     )
 }

@@ -59,7 +59,8 @@
 }
 
 .btnLogout a {
-  background-color: #FE9C87;
+  color: #ff9b8a;
+  background-color: rgba(255, 155, 138, .2);
 }
 
 .btn a:hover {
@@ -68,6 +69,6 @@
 }
 
 .btnLogout a:hover {
-  background-color: #fff;
-  color:#FE9C87;
+  color: #fff;
+  background-color: #ff9b8a;
 }

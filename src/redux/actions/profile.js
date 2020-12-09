@@ -57,9 +57,10 @@ export const getProfileTC = (id) => (dispatch) => {
         })
 }
 
-export const setProfileInfoTC = (obj) => (dispatch) => {
+export const setProfileInfoTC = (obj, userId) => (dispatch) => {
     return profileAPI.setProfileInfo(obj)
             .then((resp) => {
+                dispatch(getProfileTC(userId))
                 if(resp.resultCode === 1) {
                     const message = resp.messages.length > 0 ? resp.messages[0] : 'Some error';
                     dispatch(stopSubmit('about', {_error: message}))

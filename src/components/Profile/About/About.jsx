@@ -3,22 +3,29 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import s from './About.module.css';
 import AboutReduxForm from './AboutForm';
+import AboutData from './AboutData/AboutData';
 import {setProfileInfoTC, setEditModeAC} from './../../../redux/actions/profile';
 
 
-function About() {
+const About = () => {
+    console.log('RENDER ABOUT')
     const dispatch = useDispatch();
     const [activeLink, setActiveLink] = useState(0);
     const activeLinks = ['Contact and Basic info', 'Work and Education'];
     
-    // const editMode = useSelector(({profile}) => profile);
+    const {editMode} = useSelector(({profile}) => profile);
+    const {id} = useSelector(({auth}) => auth);
 
     const onSubmit = (values) => {
-        dispatch(setProfileInfoTC(values))
+        dispatch(setProfileInfoTC(values, id))
             .then(() => {
                 dispatch(setEditModeAC(false))
             })
     }
+
+    // Initial values for Redux-form
+
+    const {profilePage} = useSelector(({profile}) => profile)
 
     return (
         <div className={s.aboutWrap}>
@@ -28,16 +35,10 @@ function About() {
                 }
             </div>
             <div className={s.aboutInf}>
-                <div className={s.title}>About me</div>
-                {/* <div className={s.aboutItem}>
-                    <label htmlFor='photo'>Photo:</label>
-                    <input type='file'/>
-                </div>
-                <div className={s.aboutItem}>
-                    <label htmlFor='Status'>Status:</label>
-                    <input type='text' placeholder='Status'/>
-                </div> */}
-                <AboutReduxForm onSubmit={onSubmit}/>
+                {editMode
+                ?  <AboutReduxForm initialValues={profilePage} onSubmit={onSubmit}/>
+                :  <AboutData {...profilePage}/>
+                }   
             </div>
         </div>
     )

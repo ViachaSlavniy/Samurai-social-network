@@ -6,6 +6,7 @@ import s from './Posts.module.css';
 
 
 function Posts({userPhoto, unknownUser}) {
+    console.log('RENDER POSTS')
     const dispatch = useDispatch();
     const refPostArea = React.createRef();
 

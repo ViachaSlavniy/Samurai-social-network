@@ -47,25 +47,38 @@
     transition: all .2s linear;
   
 }
-
+.btn + .btn {
+    margin-left: 2rem;
+}
 .btn:hover {
-background-color: #fff;
-color:#2aa3fb;
+    background-color: #fff;
+    color:#2aa3fb;
+}
+.btnCancel {
+    color: #ff9b8a;
+    background-color: rgba(255, 155, 138, .2);
+}
+.btnCancel:hover {
+    color: #fff;
+    background-color: #ff9b8a;
 }
 
-.aboutItem {
-    margin: .5rem 0;
+.dataItem {
+    display: flex;
+    align-items: center;
+    margin: .7rem 0;
 }
-.aboutItem label {
-    margin: 0;
-    margin-right: 1rem;
-    width: 160px;
+.dataItem label {
+    flex-basis: 25%;
 }
-.aboutItem input {
-    padding: .3rem 1rem;
-    
-    border: none;
-
-    color: inherit;
-    background-color: #29324f;
+.dataItem input,
+.dataItem textarea {
+    width: 300px;
+}
+.dataItemTitle {
+    flex-basis: 25%;
+    margin: .5rem;
+}
+.dataItemText {
+    flex-basis: 60%;
 }
