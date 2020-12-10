@@ -24,6 +24,7 @@ body {
   grid-template-columns: 2fr 10fr;
   background-color: #182039;
   grid-gap: 10px;
+  grid-column-gap: 20px;
 }
 
 .page-item {

@@ -1,5 +1,9 @@
+.posts__blockWrap {
+  flex-basis: 68%;
+  display: flex;
+  flex-direction: column;
+}
 .posts__block {
-    grid-area: posts;
     background-color: #1E2745;
     padding: 0 0 20px;
   }
@@ -10,6 +14,7 @@
   }
   .posts__blockTitle {
     padding: 20px;
+    font-size: 1.1rem;
     border-bottom: 1px solid #252e4b;
   }
   .posts__formImg {

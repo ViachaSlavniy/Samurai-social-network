@@ -4,7 +4,6 @@ import { Redirect, withRouter } from 'react-router-dom';
 import {getProfileTC, setEditModeAC} from './../../redux/actions/profile';
 import { useState } from 'react';
 import s from './Profile.module.css';
-import Posts from './Posts/Posts';
 import Preloader from '../Common/Preloader';
 import unknown from './../../assets/img/unknown150.jpg'
 import github from './../../assets/icons/github.svg';
@@ -17,10 +16,10 @@ import edit from './../../assets/icons/pencil.svg'
 // import settings from './../../assets/icons/settings.svg'
 import About from './About/About';
 import { setAuthUserDataTC } from '../../redux/actions/auth';
+import TimelineBlock from './TImelineBlock/TimelineBlock';
 
 
-
-const Profile = React.memo((props) => {
+const Profile = (props) => {
     console.log('RENDER PROFILE')
     const dispatch = useDispatch();
 
@@ -144,7 +143,7 @@ const Profile = React.memo((props) => {
                     }
                 </div>
                 {
-                    activeInfoItem === 0 && <Posts userPhoto={profile.photos.large} unknownUser={unknown}/>
+                    activeInfoItem === 0 && <TimelineBlock/>
                 }
                 {
                     activeInfoItem === 1 && <About/>
@@ -164,7 +163,7 @@ const Profile = React.memo((props) => {
         }
         </>
     )
-})
+}
 
 const ProfileWithRouter = withRouter(Profile);
 

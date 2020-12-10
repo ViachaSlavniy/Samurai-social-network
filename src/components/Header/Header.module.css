@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Blame";
+  src: url(./../../assets//fonts/Blame.ttf);
+}
+
 .header {
   display: flex;
   padding: 0 20px;
@@ -7,7 +12,9 @@
   background-color: #1E2745;
 }
 .header__logo {
-  flex-basis: 20%;
+  font-size: 1.1rem;
+  font-family: 'Blame', sans-serif;
+  flex-basis: 25%;
 }
 .header__info {
   display: flex;

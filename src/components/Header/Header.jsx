@@ -44,11 +44,7 @@ function Header() {
     return (
         <div className={s.header}>
             <div className={s.header__logo}>
-                SAMURAI
-                <Link className={s.logo__link} to="/">
-                    <img className={s.logo} src={logo} alt="Samurai logo"/>
-                </Link>
-                SOCIAL
+                SAMURAI SOCIAL NETWORK
             </div>
                 <SearchBlock resultBlockRef={resultBlockRef} showSearchBlock={showSearchBlock} onSubmitForm={onSubmitForm}/>
             {isAuth

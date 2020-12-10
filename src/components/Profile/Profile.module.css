@@ -5,7 +5,6 @@
   "info"
   "posts"
   "post";
-  grid-gap: 10px;
 }
 .profile__wrap {  
     width: 100%;
@@ -21,7 +20,7 @@
     position: absolute;
     left: 50%;
     bottom: 44%;
-    transform: translate(-80%);
+    transform: translate(-65%);
   }
   .profile__photo {
     margin: 0 auto;
@@ -36,6 +35,7 @@
     max-width: 100%;
   }
   .profile__detail {
+    font-size: 1.7em;
     margin-top: 10px;
     text-align: center;
   }
@@ -83,6 +83,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 10px 0;
 
     height: 4rem;
 

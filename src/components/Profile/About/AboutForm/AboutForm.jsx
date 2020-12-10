@@ -1,9 +1,9 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import { useSelector, useDispatch } from 'react-redux';
-import {setEditModeAC} from './../../../redux/actions/profile';
-import {Element} from './../../FormControls/FormControls';
-import s from './About.module.css'
+import {setEditModeAC} from '../../../../redux/actions/profile';
+import {Element} from '../../../FormControls/FormControls';
+import s from './AboutForm.module.css';
 
 function AboutForm({onSubmit, ...props}) {
     const dispatch = useDispatch();

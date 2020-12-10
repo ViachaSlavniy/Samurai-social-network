@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import s from './About.module.css';
-import AboutReduxForm from './AboutForm';
+import AboutReduxForm from './AboutForm/AboutForm';
 import AboutData from './AboutData/AboutData';
 import {setProfileInfoTC, setEditModeAC} from './../../../redux/actions/profile';
 

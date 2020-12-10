@@ -1,4 +1,5 @@
 .post {
+    margin-top: 10px;
     grid-area: post;
     background-color: #1E2745;
     color: #8c91b6;

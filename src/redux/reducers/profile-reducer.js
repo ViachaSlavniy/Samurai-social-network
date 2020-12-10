@@ -4,7 +4,9 @@ import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH, SET_EDIT_MODE } fro
 const initialState = {
     profilePage: null,
     postText: '',
-    postsData: [],
+    postsData: [
+        {id: 1, postText: 'Hello my potential employer :)', likesCount: 100}
+    ],
     isFetching: false,
     editMode: false
 }

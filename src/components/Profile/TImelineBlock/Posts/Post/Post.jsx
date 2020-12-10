@@ -22,7 +22,7 @@ const  Post = ({postText, likesCount, userPhoto}) => {
                 <span className={s.post__counterItem}>Share</span>
             </div>
             <div className={s.post__comments}>
-                <Comment/>
+                {/* <Comment/> */}
             </div>
         </div>
     )
