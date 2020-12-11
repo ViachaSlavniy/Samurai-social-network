@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/Samurai-social-network/static/css/main.4e215d9a.chunk.css",
-    "main.js": "/Samurai-social-network/static/js/main.3f57c3d2.chunk.js",
-    "main.js.map": "/Samurai-social-network/static/js/main.3f57c3d2.chunk.js.map",
+    "main.js": "/Samurai-social-network/static/js/main.cebc4f74.chunk.js",
+    "main.js.map": "/Samurai-social-network/static/js/main.cebc4f74.chunk.js.map",
     "runtime-main.js": "/Samurai-social-network/static/js/runtime-main.8f98d537.js",
     "runtime-main.js.map": "/Samurai-social-network/static/js/runtime-main.8f98d537.js.map",
     "static/css/2.1a02f21c.chunk.css": "/Samurai-social-network/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.21638766.chunk.js": "/Samurai-social-network/static/js/2.21638766.chunk.js",
-    "static/js/2.21638766.chunk.js.map": "/Samurai-social-network/static/js/2.21638766.chunk.js.map",
+    "static/js/2.87bddb0a.chunk.js": "/Samurai-social-network/static/js/2.87bddb0a.chunk.js",
+    "static/js/2.87bddb0a.chunk.js.map": "/Samurai-social-network/static/js/2.87bddb0a.chunk.js.map",
     "static/js/3.1980ec1f.chunk.js": "/Samurai-social-network/static/js/3.1980ec1f.chunk.js",
     "static/js/3.1980ec1f.chunk.js.map": "/Samurai-social-network/static/js/3.1980ec1f.chunk.js.map",
     "index.html": "/Samurai-social-network/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/Samurai-social-network/static/css/2.1a02f21c.chunk.css.map",
     "static/css/main.4e215d9a.chunk.css.map": "/Samurai-social-network/static/css/main.4e215d9a.chunk.css.map",
-    "static/js/2.21638766.chunk.js.LICENSE.txt": "/Samurai-social-network/static/js/2.21638766.chunk.js.LICENSE.txt",
+    "static/js/2.87bddb0a.chunk.js.LICENSE.txt": "/Samurai-social-network/static/js/2.87bddb0a.chunk.js.LICENSE.txt",
     "static/media/Header.module.css": "/Samurai-social-network/static/media/Blame.f707efa7.ttf",
     "static/media/Profile.module.css": "/Samurai-social-network/static/media/bg1.e0c1beec.jpg",
     "static/media/Nav.module.css": "/Samurai-social-network/static/media/user.9d4e0008.svg",
@@ -32,8 +32,8 @@
   "entrypoints": [
     "static/js/runtime-main.8f98d537.js",
     "static/css/2.1a02f21c.chunk.css",
-    "static/js/2.21638766.chunk.js",
+    "static/js/2.87bddb0a.chunk.js",
     "static/css/main.4e215d9a.chunk.css",
-    "static/js/main.3f57c3d2.chunk.js"
+    "static/js/main.cebc4f74.chunk.js"
   ]
 }
