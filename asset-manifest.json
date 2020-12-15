@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/Samurai-social-network/static/css/main.4e215d9a.chunk.css",
-    "main.js": "/Samurai-social-network/static/js/main.f1e607af.chunk.js",
-    "main.js.map": "/Samurai-social-network/static/js/main.f1e607af.chunk.js.map",
-    "runtime-main.js": "/Samurai-social-network/static/js/runtime-main.8f98d537.js",
-    "runtime-main.js.map": "/Samurai-social-network/static/js/runtime-main.8f98d537.js.map",
+    "main.css": "/Samurai-social-network/static/css/main.64245db9.chunk.css",
+    "main.js": "/Samurai-social-network/static/js/main.5d195cd3.chunk.js",
+    "main.js.map": "/Samurai-social-network/static/js/main.5d195cd3.chunk.js.map",
+    "runtime-main.js": "/Samurai-social-network/static/js/runtime-main.45bca233.js",
+    "runtime-main.js.map": "/Samurai-social-network/static/js/runtime-main.45bca233.js.map",
     "static/css/2.1a02f21c.chunk.css": "/Samurai-social-network/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.87bddb0a.chunk.js": "/Samurai-social-network/static/js/2.87bddb0a.chunk.js",
-    "static/js/2.87bddb0a.chunk.js.map": "/Samurai-social-network/static/js/2.87bddb0a.chunk.js.map",
-    "static/js/3.1980ec1f.chunk.js": "/Samurai-social-network/static/js/3.1980ec1f.chunk.js",
-    "static/js/3.1980ec1f.chunk.js.map": "/Samurai-social-network/static/js/3.1980ec1f.chunk.js.map",
+    "static/js/2.53f14210.chunk.js": "/Samurai-social-network/static/js/2.53f14210.chunk.js",
+    "static/js/2.53f14210.chunk.js.map": "/Samurai-social-network/static/js/2.53f14210.chunk.js.map",
+    "static/js/3.0ef9e509.chunk.js": "/Samurai-social-network/static/js/3.0ef9e509.chunk.js",
+    "static/js/3.0ef9e509.chunk.js.map": "/Samurai-social-network/static/js/3.0ef9e509.chunk.js.map",
     "index.html": "/Samurai-social-network/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/Samurai-social-network/static/css/2.1a02f21c.chunk.css.map",
-    "static/css/main.4e215d9a.chunk.css.map": "/Samurai-social-network/static/css/main.4e215d9a.chunk.css.map",
-    "static/js/2.87bddb0a.chunk.js.LICENSE.txt": "/Samurai-social-network/static/js/2.87bddb0a.chunk.js.LICENSE.txt",
+    "static/css/main.64245db9.chunk.css.map": "/Samurai-social-network/static/css/main.64245db9.chunk.css.map",
+    "static/js/2.53f14210.chunk.js.LICENSE.txt": "/Samurai-social-network/static/js/2.53f14210.chunk.js.LICENSE.txt",
     "static/media/Header.module.css": "/Samurai-social-network/static/media/Blame.f707efa7.ttf",
+    "static/media/Preloader.8c15fc34.svg": "/Samurai-social-network/static/media/Preloader.8c15fc34.svg",
     "static/media/Profile.module.css": "/Samurai-social-network/static/media/bg1.e0c1beec.jpg",
     "static/media/Nav.module.css": "/Samurai-social-network/static/media/user.9d4e0008.svg",
     "static/media/facebook.5aa9dd97.svg": "/Samurai-social-network/static/media/facebook.5aa9dd97.svg",
@@ -22,7 +23,6 @@
     "static/media/instagram.02967a62.svg": "/Samurai-social-network/static/media/instagram.02967a62.svg",
     "static/media/loupe.f4e852a1.svg": "/Samurai-social-network/static/media/loupe.f4e852a1.svg",
     "static/media/pencil.a9e27262.svg": "/Samurai-social-network/static/media/pencil.a9e27262.svg",
-    "static/media/preloader.23db3579.svg": "/Samurai-social-network/static/media/preloader.23db3579.svg",
     "static/media/twitter.b80161ac.svg": "/Samurai-social-network/static/media/twitter.b80161ac.svg",
     "static/media/unknown150.1b9fa301.jpg": "/Samurai-social-network/static/media/unknown150.1b9fa301.jpg",
     "static/media/usersBg.8b1ba409.jpg": "/Samurai-social-network/static/media/usersBg.8b1ba409.jpg",
@@ -30,10 +30,10 @@
     "static/media/youtube.c02f061a.svg": "/Samurai-social-network/static/media/youtube.c02f061a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8f98d537.js",
+    "static/js/runtime-main.45bca233.js",
     "static/css/2.1a02f21c.chunk.css",
-    "static/js/2.87bddb0a.chunk.js",
-    "static/css/main.4e215d9a.chunk.css",
-    "static/js/main.f1e607af.chunk.js"
+    "static/js/2.53f14210.chunk.js",
+    "static/css/main.64245db9.chunk.css",
+    "static/js/main.5d195cd3.chunk.js"
   ]
 }
