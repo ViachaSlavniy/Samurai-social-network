@@ -20,7 +20,6 @@ import TimelineBlock from './TImelineBlock/TimelineBlock';
 
 
 const Profile = (props) => {
-    console.log('RENDER PROFILE')
     const dispatch = useDispatch();
 
     const {isAuth, id} = useSelector(({auth}) => auth)
@@ -35,8 +34,9 @@ const Profile = (props) => {
         }
         if(!userUrl) {
             dispatch(getProfileTC(id))
+        } else {
+            dispatch(getProfileTC(userUrl))
         }
-        dispatch(getProfileTC(userUrl))
     },[userUrl, id])
     
     const profile = useSelector(({profile}) => profile.profilePage);
@@ -74,7 +74,7 @@ const Profile = (props) => {
                                 <div className={s.profile__photo}>
                                     <img src={profilePage.photos.large 
                                         ? profilePage.photos.large 
-                                        : unknown} alt="profile image"/>
+                                        : unknown} alt="profile"/>
                                 </div>
                                 <div className={s.profile__detail}>
                                     {profilePage.fullName}

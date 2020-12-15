@@ -28,9 +28,9 @@ function AboutForm({onSubmit, ...props}) {
             </div>
             <div className={s.dataItem}>
                 <label>About me: </label>
-                <Field placeholder={'Write something about you'} name={'aboutMe'} component={Element} type="textarea"/>
+                <Field  placeholder={'Write something about you'} name={'aboutMe'} component={Element} type="textarea"/>
             </div>
-            <div className={s.dataItem}>
+            <div className={`${s.dataItem} ${s.checkbox}`}>
                 <label>Looking for a job: </label>
                 <Field name={'lookingForAJob'} component={Element} type="checkbox"/>
             </div>
@@ -44,7 +44,7 @@ function AboutForm({onSubmit, ...props}) {
                 return (
                 <div className={s.dataItem} key={key}>
                     <label>{key}:</label>
-                    <Field placeholder={key} name={'contacts.' + key} component={Element} type="url"/>
+                    <Field placeholder={`https://${key}.com`} name={'contacts.' + key} component={Element} type="url"/>
                 </div>
                 )
             })

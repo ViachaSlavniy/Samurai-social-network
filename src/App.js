@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch, withRouter } from 'react-router';
+import { Redirect, Route, Switch} from 'react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Footer from './components/Footer/Footer';
@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     dispatch(initializeApp());
-  }, [])
+  },[])
 
   return (
     <div className="app-wrapper">

@@ -1,9 +1,10 @@
 import React from 'react';
-import preloader from './../../assets/img/preloader.svg'
+import s from './Preloader.module.css';
+import preloader from './../../assets/img/Preloader.svg';
 
 function Preloader() {
     return (
-        <div>
+        <div className={s.preloader}>
             <img src={preloader} alt="preloader"/>
         </div>
     )

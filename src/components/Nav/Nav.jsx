@@ -1,11 +1,5 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import profileLogo from './../../assets/icons/user.svg';
-import community from './../../assets/icons/community.svg';
-import news from './../../assets/icons/news.svg';
-import messages from './../../assets/icons/messages.svg';
-import friends from './../../assets/icons/friends1.svg';
-import users from './../../assets/icons/group.svg';
 import s from './Nav.module.css';
 
 function Nav() {

@@ -1,6 +1,5 @@
 import {INITIALIZE_APP} from './types';
 import {setAuthUserDataTC} from './auth'
-import { getFriendsTC } from './users';
 
 
 const initializeAppAC = () => {

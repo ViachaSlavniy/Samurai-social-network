@@ -26,12 +26,12 @@ function UserCard({id, name, status, photos, followed}) {
     return (
         <div className={s.userCard}>
             <div className={s.cardBg}>
-                <img src={cardBg} alt="card background image"/>
+                <img src={cardBg} alt="card background"/>
             </div>
             <div className={s.cardInfo}>
                 <div className={s.cardPhotoWrap}>
                     <div className={s.cardPhoto}>
-                        <Link to={`/profile/${id}`}><img src={photos.large ? photos.large : unknownUser} alt="card photo"/></Link>
+                        <Link to={`/profile/${id}`}><img src={photos.large ? photos.large : unknownUser} alt="card"/></Link>
                     </div>
                 </div>
                 <div className={s.cardDesc}>

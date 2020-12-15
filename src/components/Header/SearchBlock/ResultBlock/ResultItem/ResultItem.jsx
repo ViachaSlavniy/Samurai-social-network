@@ -8,7 +8,7 @@ function ResultItem({userId, name, status, photo}) {
         <Link className={s.resultItemlink} to={`/profile/${userId}`}>
             <div className={s.header__searchResultItem}>
                 <div className={s.userImage}>
-                    <img src={photo === null ? unknown : photo} alt="result search user photo"/>
+                    <img src={photo === null ? unknown : photo} alt="result search user"/>
                 </div>
                 <div className={s.userInfo}>
                     <div className={s.userName}>

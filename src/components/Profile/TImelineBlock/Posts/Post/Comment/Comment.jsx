@@ -5,7 +5,7 @@ function Comment() {
     return (
         <div className="comment__user">
             <div className="user__img">
-                <img src={profile50} alt="commentator photo"/>
+                <img src={profile50} alt="commentator"/>
             </div>
             <div className="comment__info">
                 <div className="user__name">Monty Carlo</div>

@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react';
 import s from './Header.module.css';
 import {Link} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
-import logo from './../../assets/img/logo2.png';
-import unknown from './../../assets/img/unknown150.jpg'
 import { logOutTC } from '../../redux/actions/auth';
 import { searchTС } from '../../redux/actions/users';
 import SearchBlock from './SearchBlock/SearchBlock';
@@ -11,7 +9,6 @@ import SearchBlock from './SearchBlock/SearchBlock';
 function Header() {
     const dispatch = useDispatch();
     const {isAuth, userName, userPhotoURL} = useSelector(({auth}) => auth);
-    const {profilePage} = useSelector(({profile}) => profile);
 
     const logout = () => {
         dispatch(logOutTC());
