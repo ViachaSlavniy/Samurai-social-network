@@ -11,7 +11,7 @@ export const LOG_OUT = 'LOG_OUT';
 export const SET_CAPTCHA = 'SET_CAPTCHA';
 
 
-//Profile types
+//ProfilePage types
 
 export const ADD_POST = 'ADD_POST';
 export const CHANGE_POST_TEXT = 'CHANGE_POST_TEXT';
@@ -19,7 +19,7 @@ export const SET_PROFILE = 'SET_PROFILE';
 export const SET_FETCH = 'SET_FETCH';
 export const SET_EDIT_MODE = 'SET_EDIT_MODE';
 
-//Users types
+//UsersPage types
 
 export const SET_USERS = 'SET_USERS';
 export const SET_FRIENDS = 'SET_FRIENDS';

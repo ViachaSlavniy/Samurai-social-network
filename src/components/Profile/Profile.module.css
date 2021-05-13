@@ -11,7 +11,6 @@
   }
   .profile__bg {
     position: relative;
-    max-width: 1200px;
     height: 250px;
     background: url(./../../assets/img/bg1.jpg) no-repeat center;
     background-size: cover;
@@ -19,7 +18,7 @@
   .profile__photoWrapper {
     position: absolute;
     left: 50%;
-    bottom: 44%;
+    bottom: 54%;
     transform: translate(-65%);
   }
   .profile__photo {

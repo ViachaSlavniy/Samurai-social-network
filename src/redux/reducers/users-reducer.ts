@@ -18,7 +18,7 @@ const initialState = {
     }
 }
 
-const usersReducer = (state = initialState, action) => {
+const usersReducer = (state = initialState, action: any): InitialStateType => {
     switch(action.type) {
         case SET_USERS: {
             return {
@@ -85,5 +85,8 @@ const usersReducer = (state = initialState, action) => {
 
 export default usersReducer;
 
+// Types
+
+type InitialStateType = typeof initialState;
 
 

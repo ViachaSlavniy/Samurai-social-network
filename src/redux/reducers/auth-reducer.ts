@@ -10,7 +10,7 @@ const initialState = {
     userName: null
 }
 
-const authReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action: any): InitialStateType => {
     switch(action.type) {
 
         case SET_AUTH_USER_DATA: {
@@ -53,3 +53,5 @@ const authReducer = (state = initialState, action) => {
 }
 
 export default authReducer;
+
+type InitialStateType = typeof initialState;

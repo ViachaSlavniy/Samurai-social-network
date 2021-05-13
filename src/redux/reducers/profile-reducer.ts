@@ -11,12 +11,10 @@ const initialState = {
     editMode: false
 }
 
-const profileReducer = (state = initialState, action) => {
+const profileReducer = (state = initialState, action: any): InitialStateType => {
         switch(action.type) {
             case ADD_POST: {
-    
                 const newPost = {id: state.postsData.length + 1, postText: action.payload, likesCount: 0}
-    
                 return {
                     ...state,
                     postsData: [...state.postsData, newPost] 
@@ -24,7 +22,6 @@ const profileReducer = (state = initialState, action) => {
             }
 
             case CHANGE_POST_TEXT: {
-    
                 return {
                     ...state,
                     postText: action.payload 
@@ -32,7 +29,6 @@ const profileReducer = (state = initialState, action) => {
             }
 
             case SET_PROFILE: {
-    
                 return {
                     ...state,
                     profilePage: {
@@ -41,7 +37,6 @@ const profileReducer = (state = initialState, action) => {
                 }
             }
             case SET_FETCH: {
-    
                 return {
                     ...state,
                     isFetching: action.payload
@@ -60,6 +55,7 @@ const profileReducer = (state = initialState, action) => {
 
 export default profileReducer;
 
+type InitialStateType = typeof initialState;
 
 
 
