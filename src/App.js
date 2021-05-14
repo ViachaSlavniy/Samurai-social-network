@@ -20,7 +20,7 @@ import Friends from './components/Friends/Friends';
 function App() {
   const dispatch = useDispatch();
 
-  const {initialize} = useSelector(({app}) => app)
+  const {initialized} = useSelector(({app}) => app);
 
   useEffect(() => {
     dispatch(initializeApp());
@@ -30,8 +30,8 @@ function App() {
     <div className="app-wrapper">
       <Header/>
       <Nav/>
-      {initialize
-      ?<div className="app-wrapper-content">
+      {initialized
+      ? <div className="app-wrapper-content">
         <Switch>
           <Route path="/profile/:userId?" render={() => <ProfileWithRouter/>} />
           <Route path="/messages" render={() => <Messages/>} />

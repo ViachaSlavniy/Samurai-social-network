@@ -41,23 +41,23 @@ export const profileAPI = {
 }
 
 export const usersAPI = {
-    getUsers(currentPage, pageSize){
+    getUsers(currentPage, pageSize) {
         return instance.get(`/users?page=${currentPage}&count=${pageSize}`)
             .then((resp) => resp.data);
     },
-    getFriends(currentPage, pageSize, friendsBool = true){
+    getFriends(currentPage, pageSize, friendsBool = true) {
         return instance.get(`/users?page=${currentPage}&count=${pageSize}&friend=${friendsBool}`)
             .then((resp) => resp.data);
     },
-    searchUser(userName){
+    searchUser(userName) {
         return instance.get(`/users?term=${userName}`)
             .then((resp) => resp.data)
     },
-    follow(userId){
+    follow(userId) {
         return instance.post(`/follow/${userId}`)
             .then((resp) => resp.data);
     },
-    unfollow(userId){
+    unfollow(userId) {
         return instance.delete(`/follow/${userId}`)
             .then((resp) => resp.data);
     }

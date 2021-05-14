@@ -8,14 +8,11 @@ const initializeAppAC = () => {
     }
 }
 
-
 //THUNK CREATORS
 
-export const initializeApp = () => (dispatch) => {
-    let promise = dispatch(setAuthUserDataTC());
+export const initializeApp = () => async (dispatch) => {
+    let promise = await dispatch(setAuthUserDataTC());
     //dispatch(somethings)
-    Promise.all([promise])
-        .then(() => {
-            dispatch(initializeAppAC())
-        })
+    await Promise.all([promise])
+    dispatch(initializeAppAC())
 }

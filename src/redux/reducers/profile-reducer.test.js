@@ -1,10 +1,10 @@
-import {addPostAC} from "../actions/profile";
+import {addPostAC, postChangeAC} from "../actions/profile";
 import profileReducer from './profile-reducer';
 
+let state;
 
-test('post must be added', () => {
-    const action = addPostAC('new post');
-    const state = {
+beforeEach(() => {
+    state = {
         profilePage: null,
         postText: '',
         postsData: [
@@ -13,6 +13,20 @@ test('post must be added', () => {
         isFetching: false,
         editMode: false
     }
+})
+
+
+
+test('post must be added', () => {
+    const action = addPostAC('new post');
+
     const newState = profileReducer(state, action);
     expect(newState.postsData.length).toBe(2);
+})
+
+test('text of post must be changed', () => {
+    const action = postChangeAC('new post text');
+
+    const newState = profileReducer(state, action);
+    expect(newState.postText.length).not.toEqual(state.postText.length);
 })

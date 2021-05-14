@@ -3,7 +3,7 @@ import s from './Header.module.css';
 import {Link} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import { logOutTC } from '../../redux/actions/auth';
-import { searchTС } from '../../redux/actions/users';
+import { searchTC } from '../../redux/actions/users';
 import SearchBlock from './SearchBlock/SearchBlock';
 
 function Header() {
@@ -19,7 +19,7 @@ function Header() {
     const [showSearchBlock, setshowSearchBlock] = useState(false)
 
     const onSubmitForm = (values) => {
-        dispatch(searchTС(values.term));
+        dispatch(searchTC(values.term));
         setshowSearchBlock(true);
     }
 

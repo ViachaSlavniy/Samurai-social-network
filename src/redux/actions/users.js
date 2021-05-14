@@ -1,5 +1,5 @@
 import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SEARCH_USERS, SET_FRIENDS} from './types';
-import { usersAPI } from './../../api/api';
+import { usersAPI } from '../../api/api';
 
 
 // ACTION CREATORS
@@ -55,45 +55,35 @@ export const searchAC = (obj) => {
 
 // THUNK CREATORS
 
-export const getUsersTC = (currentPage, pageSize) => (dispatch) => {
-    usersAPI.getUsers(currentPage, pageSize)
-            .then((data) => {
-                dispatch(setLoadAC(false))
-                dispatch(setUsersAC(data))
-                dispatch(setLoadAC(true))
-            })
+export const getUsersTC = (currentPage, pageSize) => async (dispatch) => {
+    dispatch(setLoadAC(false))
+    const data = await usersAPI.getUsers(currentPage, pageSize)
+    dispatch(setUsersAC(data))
+    dispatch(setLoadAC(true))
 }
 
-export const getFriendsTC = (currentPage = 1, pageSize = 10) => (dispatch) => {
-    usersAPI.getFriends(currentPage, pageSize)
-        .then((data) => {
-            dispatch(setLoadAC(false))
-            dispatch(setFriendsAC(data))
-            dispatch(setLoadAC(true))
-    })
+export const getFriendsTC = (currentPage = 1, pageSize = 10) => async (dispatch) => {
+    dispatch(setLoadAC(false))
+    const data = await usersAPI.getFriends(currentPage, pageSize)
+    dispatch(setFriendsAC(data))
+    dispatch(setLoadAC(true))
 }
 
-export const followTC = (userId) => (dispatch) => {
-    usersAPI.follow(userId)
-            .then((resp) => {
-            if(resp.resultCode === 0) {
-                dispatch(followAC(userId));
-            }
-    })
+export const followTC = (userId) => async (dispatch) => {
+    let data = await usersAPI.follow(userId)
+    if (data.resultCode === 0) {
+        dispatch(followAC(userId));
+    }
 }
 
-export const unfollowTC = (userId) => (dispatch) => {
-    usersAPI.unfollow(userId)
-            .then((resp) => {
-            if(resp.resultCode === 0) {
-                dispatch(unfollowAC(userId));
-            }
-    })
+export const unfollowTC = (userId) => async (dispatch) => {
+    const data = await usersAPI.unfollow(userId)
+    if (data.resultCode === 0) {
+        dispatch(unfollowAC(userId));
+    }
 }
 
-export const searchTС = (userName) => (dispatch) => {
-    usersAPI.searchUser(userName)
-            .then((resp) => {
-                dispatch(searchAC(resp));
-            })
+export const searchTC = (userName) => async (dispatch) => {
+    const data = await usersAPI.searchUser(userName)
+    dispatch(searchAC(data));
 }

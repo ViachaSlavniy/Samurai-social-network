@@ -1,7 +1,7 @@
 import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SEARCH_USERS, SET_FRIENDS} from './../actions/types'
 
 const initialState = {
-    items: [],
+    items: [] as any,
     isLoaded: false,
     totalCount: null,
     error: null,
@@ -35,7 +35,7 @@ const usersReducer = (state = initialState, action: any): InitialStateType => {
         case FOLLOW: {
             return {
                 ...state,
-                items: state.items.map(user => {
+                items: state.items.map((user: any) => {
                     if(user.id === action.payload) {
                         return {...user, followed: true}
                     }
@@ -47,7 +47,7 @@ const usersReducer = (state = initialState, action: any): InitialStateType => {
         case UNFOLLOW: {
             return {
                 ...state,
-                items: state.items.map(user => {
+                items: state.items.map((user: any) => {
                     if(user.id === action.payload) {
                         return {...user, followed: false}
                     }

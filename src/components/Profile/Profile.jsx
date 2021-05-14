@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, withRouter } from 'react-router-dom';
-import {getProfileTC, setEditModeAC} from './../../redux/actions/profile';
+import {getProfileTC, setEditModeAC} from '../../redux/actions/profile';
 import { useState } from 'react';
 import s from './Profile.module.css';
 import Preloader from '../Common/Preloader';
@@ -13,7 +13,6 @@ import facebook from './../../assets/icons/facebook.svg';
 import twitter from './../../assets/icons/twitter.svg';
 import youtube from './../../assets/icons/youtube.svg';
 import edit from './../../assets/icons/pencil.svg'
-// import settings from './../../assets/icons/settings.svg'
 import About from './About/About';
 import { setAuthUserDataTC } from '../../redux/actions/auth';
 import TimelineBlock from './TImelineBlock/TimelineBlock';
@@ -38,7 +37,7 @@ const Profile = (props) => {
             dispatch(getProfileTC(userUrl))
         }
     },[userUrl, id])
-    
+
     const profile = useSelector(({profile}) => profile.profilePage);
 
     const [activeInfoItem, setActiveInfoItem] = useState(0)
