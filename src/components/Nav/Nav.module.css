@@ -38,22 +38,22 @@
     transition: all .2s ease-in;
   }
   #profileUser {
-    mask-image: url(./../../assets/icons/user.svg);
+    mask-image: url(../../shared/assets/icons/user.svg);
   }
   #news {
-    mask-image: url(./../../assets/icons/news.svg);
+    mask-image: url(../../shared/assets/icons/news.svg);
   }
   #messages {
-    mask-image: url(./../../assets/icons/messages.svg);
+    mask-image: url(../../shared/assets/icons/messages.svg);
   }
   #friends {
-    mask-image: url(./../../assets/icons/friends1.svg);
+    mask-image: url(../../shared/assets/icons/friends1.svg);
   }
   #users {
-    mask-image: url(./../../assets/icons/group.svg);
+    mask-image: url(../../shared/assets/icons/group.svg);
   }
   #communities {
-    mask-image: url(./../../assets/icons/community.svg);
+    mask-image: url(../../shared/assets/icons/community.svg);
   }
   .sidebar__nav {
     grid-area: nav;

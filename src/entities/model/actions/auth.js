@@ -1,4 +1,4 @@
-import {authAPI} from './../../api/api';
+import {authAPI} from '../../../shared/api/api';
 import {captchaTC} from './security'
 import {SET_AUTH_USER_DATA, LOG_OUT, SET_USER_INFO} from './types';
 import {stopSubmit} from 'redux-form';

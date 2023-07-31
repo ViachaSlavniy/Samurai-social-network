@@ -1,5 +1,5 @@
 import React from 'react'
-import profile50 from './../../../../../../assets/img/profile50.jpg'
+import profile50 from '../../../../../../shared/assets/img/profile50.jpg'
 
 function Comment() {
     return (
