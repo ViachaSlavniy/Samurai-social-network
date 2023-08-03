@@ -1,5 +1,5 @@
 import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SEARCH_USERS, SET_FRIENDS} from './types';
-import { usersAPI } from './../../api/api';
+import { usersAPI } from '../../../shared/api/api';
 
 
 // ACTION CREATORS

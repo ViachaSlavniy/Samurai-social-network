@@ -1,9 +1,10 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import { useSelector, useDispatch } from 'react-redux';
-import {setEditModeAC} from '../../../../redux/actions/profile';
+import {setEditModeAC} from '../../../../entities/model/actions/profile';
 import {Element} from '../../../FormControls/FormControls';
 import s from './AboutForm.module.css';
+import {Button} from "../../../../shared/ui";
 
 function AboutForm({onSubmit, ...props}) {
     const dispatch = useDispatch();
@@ -51,9 +52,20 @@ function AboutForm({onSubmit, ...props}) {
             }
             {
                 editMode && 
-                <div>
-                    <button className={s.btn} type="submit">Save</button>
-                    <button onClick={OffEditMode} className={`${s.btn} ${s.btnCancel}`}>Cancel</button>
+                <div className={s.buttons}>
+                    <Button
+                        buttonType="approve"
+                        type="submit"
+                    >
+                        Save
+                    </Button>
+                    <Button
+                        buttonType="reject"
+                        type="submit"
+                        onClick={OffEditMode}
+                    >
+                        Cancel
+                    </Button>
                 </div>
             }
         </form>

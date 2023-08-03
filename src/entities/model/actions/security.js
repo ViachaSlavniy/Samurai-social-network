@@ -1,5 +1,5 @@
 import {SET_CAPTCHA} from './types';
-import {securityAPI} from './../../api/api';
+import {securityAPI} from '../../../shared/api/api';
 
 //ACTION CREATORS
 

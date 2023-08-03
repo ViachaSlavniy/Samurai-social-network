@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { unfollowTC, followTC } from '../../../redux/actions/users';
-import cardBg from './../../../assets/img/bg1.jpg';
-import unknownUser from './../../../assets/img/unknown150.jpg';
+import { unfollowTC, followTC } from '../../../entities/model/actions/users';
+import cardBg from '../../../shared/assets/img/bg1.jpg';
+import unknownUser from '../../../shared/assets/img/unknown150.jpg';
 import s from './UserCard.module.css'
 
 function UserCard({id, name, status, photos, followed}) {

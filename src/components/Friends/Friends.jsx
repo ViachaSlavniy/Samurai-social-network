@@ -1,12 +1,12 @@
-import { React, useEffect } from 'react';
+import {useEffect} from 'react';
 import s from './Friends.module.css'
-import usersBg from './../../assets/img/usersBg.jpg';
-import { getFriendsTC } from '../../redux/actions/users';
-import { useDispatch, useSelector } from 'react-redux';
+import usersBg from '../../shared/assets/img/usersBg.jpg';
+import {getFriendsTC} from '../../entities/model/actions/users';
+import {useDispatch, useSelector} from 'react-redux';
 import Preloader from '../Common/Preloader';
 import FriendsCard from './FriendsCard/FriendsCard';
 import Paginator from '../Common/Pagination/Pagination';
-import { Redirect } from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 function Friends() {
     const dispatch = useDispatch();
@@ -17,39 +17,39 @@ function Friends() {
 
     useEffect(() => {
         dispatch(getFriendsTC(currentPage, pageSize))
-    },[currentPage])
-    
+    }, [currentPage])
+
     const oldUsersArr = useSelector(({users}) => users.friends.items);
     const newUsersArr = oldUsersArr.map(item => <FriendsCard key={item.id} {...item}/>)
 
     return (
         <>
-        {isAuth
-        ?<div className={s.usersBlock}>
-            <div className={s.bg}>
-                <img src={usersBg} alt="user bg"/>
-                <div className={s.bgTitle}>
-                    <div>
-                        <h1>Friends</h1>
+            {isAuth
+                ? <div className={s.usersBlock}>
+                    <div className={s.bg}>
+                        <img src={usersBg} alt="user bg"/>
+                        <div className={s.bgTitle}>
+                            <div>
+                                <h1>Friends</h1>
+                            </div>
+                        </div>
                     </div>
+                    <div className="row justify-content-center">
+                        <Paginator
+                            totalCount={totalCount}
+                            pageSize={pageSize}
+                            currentPage={currentPage}
+                            portionSize={portionSize} justify-items-center/>
+                    </div>
+                    {isLoaded
+                        ? <div className={s.usersContainer}>
+                            {newUsersArr}
+                        </div>
+                        : <Preloader/>
+                    }
                 </div>
-            </div>
-            <div className="row justify-content-center">
-                <Paginator 
-                totalCount={totalCount} 
-                pageSize={pageSize} 
-                currentPage={currentPage} 
-                portionSize={portionSize} justify-items-center/>
-            </div>
-            {isLoaded
-            ?<div className={s.usersContainer}>
-                {newUsersArr}
-            </div>
-            : <Preloader/>
-            }   
-        </div>
-        : <Redirect to="/login"/>
-        }
+                : <Redirect to="/login"/>
+            }
         </>
     )
 }

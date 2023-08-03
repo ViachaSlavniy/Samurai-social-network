@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Blame";
-  src: url(./../../assets//fonts/Blame.ttf);
+  src: url(../../shared/assets//fonts/Blame.ttf);
 }
 
 .header {

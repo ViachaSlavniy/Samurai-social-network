@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import s from './Users.module.css'
-import usersBg from './../../assets/img/usersBg.jpg';
-import { getUsersTC } from '../../redux/actions/users';
+import usersBg from '../../shared/assets/img/usersBg.jpg';
+import { getUsersTC } from '../../entities/model/actions/users';
 import { useDispatch, useSelector } from 'react-redux';
 import Preloader from '../Common/Preloader';
 import UserCard from './UsersCard/UserCard';

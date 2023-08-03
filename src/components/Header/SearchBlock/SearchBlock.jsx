@@ -2,7 +2,7 @@ import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import s from './SearchBlock.module.css'
 import {Element} from './../../FormControls/FormControls'
-import loupe from './../../../assets/icons/loupe.svg';
+import loupe from '../../../shared/assets/icons/loupe.svg';
 import ResultBlock from './ResultBlock/ResultBlock';
 
 const SearchBlock = ({resultBlockRef, showSearchBlock,onSubmitForm}) => {

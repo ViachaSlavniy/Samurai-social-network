@@ -1,7 +1,7 @@
 import {React, useEffect} from 'react';
 import s from './Sidebar.module.css';
 import SidebarItem from './SidebarItem/SidebarItem';
-import { getFriendsTC } from './../../redux/actions/users';
+import { getFriendsTC } from '../../entities/model/actions/users';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Sidebar = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
 import { useDispatch } from 'react-redux';
-import { setCurrentPageAC } from '../../../redux/actions/users'
+import { setCurrentPageAC } from '../../../entities/model/actions/users'
 
 function Paginator({totalCount, currentPage, pageSize, portionSize}) {
     const dispatch = useDispatch()

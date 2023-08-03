@@ -1,4 +1,4 @@
-import {SET_AUTH_USER_DATA, LOG_OUT, SET_CAPTCHA, SET_USER_INFO} from './../actions/types';
+import {SET_AUTH_USER_DATA, LOG_OUT, SET_CAPTCHA, SET_USER_INFO} from '../actions/types';
 
 const initialState = {
     isAuth: false,

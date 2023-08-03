@@ -2,7 +2,7 @@ import React from 'react';
 // import Comment from './Comment/Comment'
 import s from './Post.module.css';
 
-const  Post = ({postText, likesCount, userPhoto}) => {
+const Post = ({postText, likesCount, userPhoto}) => {
 
     return (
         <div className={s.post}>

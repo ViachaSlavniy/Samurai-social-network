@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './SidebarItem.module.css';
-import unknown from './../../../assets/img/unknown150.jpg'
+import unknown from '../../../shared/assets/img/unknown150.jpg'
 import { Link } from 'react-router-dom';
 import {useSelector} from 'react-redux';
 
