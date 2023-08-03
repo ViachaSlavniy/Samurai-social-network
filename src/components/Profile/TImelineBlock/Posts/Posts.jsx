@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {addPostAC, postChangeAC} from '../../../../entities/model/actions/profile';
 import Post from './Post/Post';
 import s from './Posts.module.css';
-import unknownUser from '../../../../shared/assets/img/unknown150.jpg'
+import unknownUser from '../../../../shared/assets/images/unknown150.jpg'
 import {Button} from "../../../../shared/ui";
 
 const Posts = () => {

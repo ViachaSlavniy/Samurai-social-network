@@ -5,7 +5,7 @@ import {getProfileTC, setEditModeAC} from '../../entities/model/actions/profile'
 import {useState} from 'react';
 import s from './Profile.module.css';
 import Preloader from '../Common/Preloader';
-import unknown from '../../shared/assets/img/unknown150.jpg'
+import unknown from '../../shared/assets/images/unknown150.jpg'
 import github from '../../shared/assets/icons/github.svg';
 import vk from '../../shared/assets/icons/vk.svg';
 import inst from '../../shared/assets/icons/instagram.svg';

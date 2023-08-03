@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import s from './Friends.module.css'
-import usersBg from '../../shared/assets/img/usersBg.jpg';
-import {getFriendsTC} from '../../entities/model/actions/users';
+import usersBg from '../../shared/assets/images/usersBg.jpg';
+import {getFriendsTC} from '../../entities/viewer/api/users';
 import {useDispatch, useSelector} from 'react-redux';
 import Preloader from '../Common/Preloader';
 import FriendsCard from './FriendsCard/FriendsCard';

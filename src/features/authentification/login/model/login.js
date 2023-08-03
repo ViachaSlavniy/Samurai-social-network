@@ -1,5 +1,5 @@
 import {stopSubmit} from "redux-form";
-import {getFriendsTC} from "../../../../entities/model/actions/users";
+import {getFriendsTC} from "../../../../entities/viewer/api/users";
 import {captchaTC} from "../../../../entities/model/actions/security";
 import {sessionAPI, setAuthUserDataTC} from "../../../../entities/session";
 

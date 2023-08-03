@@ -1,4 +1,4 @@
-import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SEARCH_USERS, SET_FRIENDS} from '../actions/types'
+import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SEARCH_USERS, SET_FRIENDS} from '../../model/actions/types'
 
 const initialState = {
     items: [],
@@ -18,7 +18,7 @@ const initialState = {
     }
 }
 
-const usersReducer = (state = initialState, action) => {
+const viewerReducer = (state = initialState, action) => {
     switch(action.type) {
         case SET_USERS: {
             return {
@@ -83,7 +83,7 @@ const usersReducer = (state = initialState, action) => {
     }
 }
 
-export default usersReducer;
+export default viewerReducer;
 
 
 

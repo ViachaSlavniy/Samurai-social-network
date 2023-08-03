@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import s from './Users.module.css'
-import usersBg from '../../shared/assets/img/usersBg.jpg';
-import { getUsersTC } from '../../entities/model/actions/users';
+import usersBg from '../../shared/assets/images/usersBg.jpg';
+import { getUsersTC } from '../../entities/viewer/api/users';
 import { useDispatch, useSelector } from 'react-redux';
 import Preloader from '../Common/Preloader';
 import UserCard from './UsersCard/UserCard';
@@ -28,9 +28,9 @@ function Users() {
                 </div>
             </div>
             <div className="row justify-content-center">
-                <Paginator totalCount={totalCount}  
-                currentPage={currentPage} 
-                pageSize={pageSize} 
+                <Paginator totalCount={totalCount}
+                currentPage={currentPage}
+                pageSize={pageSize}
                 portionSize={portionSize}
                 justify-items-center/>
             </div>
@@ -39,7 +39,7 @@ function Users() {
                 {newUsersArr}
             </div>
             : <Preloader/>
-            }   
+            }
         </div>
     )
 }

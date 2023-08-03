@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
 import { useDispatch } from 'react-redux';
-import { setCurrentPageAC } from '../../../entities/model/actions/users'
+import { setCurrentPageAC } from '../../../entities/viewer/api/users'
 
 function Paginator({totalCount, currentPage, pageSize, portionSize}) {
     const dispatch = useDispatch()
@@ -14,7 +14,7 @@ function Paginator({totalCount, currentPage, pageSize, portionSize}) {
         pages.push(i);
     }
 
-    // Получаем кол-во порций страниц 
+    // Получаем кол-во порций страниц
     const pagesPortion = Math.ceil(pagesCount / portionSize);
 
     //Получаем номер необходимой порции
@@ -29,12 +29,12 @@ function Paginator({totalCount, currentPage, pageSize, portionSize}) {
     const pagesPortionArr = pages.filter(page => leftBorderPortionNum <= page && page <= rightBorderPortionNum)
 
     // Получаем элементы пагинации для отображения
-    const elemsPagination = pagesPortionArr.map(page => <Pagination.Item 
-        key={page} 
-        onClick={() => handleCurrentPage(page)} 
+    const elemsPagination = pagesPortionArr.map(page => <Pagination.Item
+        key={page}
+        onClick={() => handleCurrentPage(page)}
         className={page === currentPage && 'active'}>
             {page}</Pagination.Item>);
-    
+
 
     const handleCurrentPage = (page) => {
         dispatch(setCurrentPageAC(page));

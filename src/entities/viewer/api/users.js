@@ -1,6 +1,29 @@
-import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SET_FRIENDS} from './types';
-import { usersAPI } from '../../../shared/api/api';
+import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SET_FRIENDS} from '../../model/actions/types';
+import {instance} from '../../../shared/api/api';
 
+
+export const usersAPI = {
+    getUsers(currentPage, pageSize){
+        return instance.get(`/users?page=${currentPage}&count=${pageSize}`)
+            .then((resp) => resp.data);
+    },
+    getFriends(currentPage, pageSize, friendsBool = true){
+        return instance.get(`/users?page=${currentPage}&count=${pageSize}&friend=${friendsBool}`)
+            .then((resp) => resp.data);
+    },
+    searchUser(userName){
+        return instance.get(`/users?term=${userName}`)
+            .then((resp) => resp.data)
+    },
+    follow(userId){
+        return instance.post(`/follow/${userId}`)
+            .then((resp) => resp.data);
+    },
+    unfollow(userId){
+        return instance.delete(`/follow/${userId}`)
+            .then((resp) => resp.data);
+    }
+}
 
 // ACTION CREATORS
 

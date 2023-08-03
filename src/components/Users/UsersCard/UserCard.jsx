@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { unfollowTC, followTC } from '../../../entities/model/actions/users';
-import cardBg from '../../../shared/assets/img/bg1.jpg';
-import unknownUser from '../../../shared/assets/img/unknown150.jpg';
+import { unfollowTC, followTC } from '../../../entities/viewer/api/users';
+import cardBg from '../../../shared/assets/images/bg1.jpg';
+import unknownUser from '../../../shared/assets/images/unknown150.jpg';
 import s from './UserCard.module.css'
 
 function UserCard({id, name, status, photos, followed}) {
@@ -49,8 +49,8 @@ function UserCard({id, name, status, photos, followed}) {
             ? <button disabled={isFollowed} onClick={handleUnFollowClick} className={s.cardBtn + ' ' + s.unfollowBtn}>Unfollow</button>
             : <button disabled={isFollowed} onClick={handleFollowClick} className={s.cardBtn}>Follow</button>
             }
-            
-        </div> 
+
+        </div>
     )
 }
 

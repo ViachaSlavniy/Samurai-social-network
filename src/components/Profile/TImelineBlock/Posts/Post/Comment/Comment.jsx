@@ -1,5 +1,5 @@
 import React from 'react'
-import profile50 from '../../../../../../shared/assets/img/profile50.jpg'
+import profile50 from '../../../../../../shared/assets/images/profile50.jpg'
 
 function Comment() {
     return (
@@ -15,7 +15,7 @@ function Comment() {
                     <span className="comment__detail-item">Reply</span>
                     <span className="comment__detail-item">Translate</span>
                     <span className="comment__detail-item">5 min</span>
-                </div>  
+                </div>
             </div>
         </div>
     )
