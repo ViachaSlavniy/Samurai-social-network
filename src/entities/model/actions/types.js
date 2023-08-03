@@ -7,7 +7,6 @@ export const INITIALIZE_APP = 'INITIALIZE_APP';
 export const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA';
 export const SET_USER_INFO = 'SET_USER_INFO';
 export const LOGIN = 'LOGIN';
-export const LOG_OUT = 'LOG_OUT';
 export const SET_CAPTCHA = 'SET_CAPTCHA';
 
 

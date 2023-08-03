@@ -1,5 +1,5 @@
-  
-  
+
+
   .nav li {
     list-style-type: none;
   }
@@ -47,7 +47,7 @@
     mask-image: url(../../shared/assets/icons/messages.svg);
   }
   #friends {
-    mask-image: url(../../shared/assets/icons/friends1.svg);
+    mask-image: url(../../shared/assets/icons/friends.svg);
   }
   #users {
     mask-image: url(../../shared/assets/icons/group.svg);

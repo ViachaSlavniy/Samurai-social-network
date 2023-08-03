@@ -15,8 +15,8 @@ import youtube from '../../shared/assets/icons/youtube.svg';
 import edit from '../../shared/assets/icons/pencil.svg'
 // import settings from './../../assets/icons/settings.svg'
 import About from './About/About';
-import {setAuthUserDataTC} from '../../entities/model/actions/auth';
 import TimelineBlock from './TImelineBlock/TimelineBlock';
+import {setAuthUserDataTC} from "../../entities/session";
 
 
 const Profile = (props) => {

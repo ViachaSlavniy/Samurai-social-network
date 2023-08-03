@@ -2,16 +2,15 @@ import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import { useSelector, useDispatch } from 'react-redux';
 import {setEditModeAC} from '../../../../entities/model/actions/profile';
-import {Element} from '../../../FormControls/FormControls';
+import {Button, Element} from "../../../../shared/ui";
 import s from './AboutForm.module.css';
-import {Button} from "../../../../shared/ui";
 
 function AboutForm({onSubmit, ...props}) {
     const dispatch = useDispatch();
 
     const {editMode, profilePage} = useSelector(({profile}) => profile);
 
-    //FOR EDITMODE 
+    //FOR EDITMODE
 
     const OffEditMode = () => {
         dispatch(setEditModeAC(false));
@@ -39,7 +38,7 @@ function AboutForm({onSubmit, ...props}) {
                 <label>My professional skills: </label>
                 <Field placeholder={'Skills'} name={'lookingForAJobDescription'} component={Element} type="textarea"/>
             </div>
-            
+
             <div className={s.title}>Contacts</div>
             {Object.keys(profilePage.contacts).map(key => {
                 return (
@@ -51,7 +50,7 @@ function AboutForm({onSubmit, ...props}) {
             })
             }
             {
-                editMode && 
+                editMode &&
                 <div className={s.buttons}>
                     <Button
                         buttonType="approve"
