@@ -1,0 +1,30 @@
+
+.header {
+  display: flex;
+  padding: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: header;
+  background-color: #1E2745;
+}
+
+.header__info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-basis: 10%;
+}
+.header__infoItem {
+  margin-right: 1rem;
+}
+.userPhoto {
+  width: 50px;
+  height: 50px;
+  border: 1px solid;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.userPhoto img {
+  object-fit: cover;
+  max-width: 100%;
+}

@@ -1,0 +1,36 @@
+.resultItemlink {
+  text-decoration: none;
+  color: inherit;
+}
+.resultItemlink:hover {
+  text-decoration: none;
+  color: inherit;
+}
+.header__searchResultItem {
+    display: flex;
+    align-items: center;
+    padding: .5rem .5rem;
+
+    cursor: pointer ;
+
+    transition: all .2s ease-in;
+  }
+  .header__searchResultItem:hover {
+    border-radius: 7px;
+    background-color: #29324f;
+  }
+.userImage {
+    margin-right: 1rem;
+    width: 3rem;
+    height: 3rem;
+
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .userImage img {
+    object-fit: cover;
+    width: 100%;
+  }
+  .userInfo {
+    text-align: start;
+  }

@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Blame";
+  src: url(../../../../shared/assets/fonts/Blame.ttf);
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-family: 'Blame', sans-serif;
+  flex-basis: 25%;
+}

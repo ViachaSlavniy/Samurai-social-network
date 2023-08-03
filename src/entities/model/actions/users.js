@@ -1,4 +1,4 @@
-import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SEARCH_USERS, SET_FRIENDS} from './types';
+import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SET_FRIENDS} from './types';
 import { usersAPI } from '../../../shared/api/api';
 
 
@@ -46,13 +46,6 @@ export const setCurrentPageAC = (page) => {
     }
 }
 
-export const searchAC = (obj) => {
-    return {
-        type: SEARCH_USERS,
-        payload: obj
-    }
-}
-
 // THUNK CREATORS
 
 export const getUsersTC = (currentPage, pageSize) => (dispatch) => {
@@ -91,9 +84,3 @@ export const unfollowTC = (userId) => (dispatch) => {
     })
 }
 
-export const searchTС = (userName) => (dispatch) => {
-    usersAPI.searchUser(userName)
-            .then((resp) => {
-                dispatch(searchAC(resp));
-            })
-}

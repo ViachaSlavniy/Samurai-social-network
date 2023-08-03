@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import profile from '../entities/model/reducers/profile-reducer';
 import users from '../entities/model/reducers/users-reducer';
 import messages from '../entities/model/reducers/messages-reducer';
-import auth from '../entities/model/reducers/auth-reducer';
+import {authReducer} from '../entities/session';
 import app from '../entities/model/reducers/app-reducer';
 
 const reducers = combineReducers({
@@ -13,7 +13,7 @@ const reducers = combineReducers({
     profile,
     users,
     messages,
-    auth,
+    auth: authReducer,
     form: formReducer
 })
 
