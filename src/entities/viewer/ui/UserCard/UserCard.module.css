@@ -39,29 +39,8 @@
     min-height: 120px;
     padding-left: 1rem;
 }
-.cardBtn {
-    display: block;
-    width: 50%;
-    margin: .5rem auto 0;
-    padding: 10px 0;
-  
-    background-color: #2aa3fb;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    transition: all .2s linear;
 
-    cursor: pointer;    
-}
-.cardBtn:hover {
-    background-color: #fff;
-    color:#2aa3fb;
-  }
-.unfollowBtn {
-    color: #ff9b8a;
-    background-color: rgba(255, 155, 138, .2);
-}
-.unfollowBtn:hover {
-    color: #fff;
-    background-color: #ff9b8a;
+.button-slot {
+    display: flex;
+    justify-content: center;
 }

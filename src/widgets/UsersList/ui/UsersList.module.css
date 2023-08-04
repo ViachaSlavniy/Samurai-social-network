@@ -1,6 +1,6 @@
-.usersBlock {
+.users-block {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
     "header"
     "pagination"
     "container";
@@ -24,7 +24,7 @@
     top: 35%;
     left: 0;
     width: 100%;
-    
+
 }
 .bgTitle div {
     display: flex;

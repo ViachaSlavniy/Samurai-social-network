@@ -4,11 +4,13 @@ import styles from './button.module.scss';
 
 type ButtonProps = {
     className?: string;
-    buttonType: "approve" | "reject";
+    buttonType: "primary" | "secondary";
     onClick?: () => void;
     type?: "submit" | "reset" | "button";
     children: React.ReactNode;
 }
+
+//TODO Реализовать флаг inProgress для дизейбла кнопки
 
 export const Button = ({buttonType, type, onClick, className, children}: ButtonProps) => {
     return (

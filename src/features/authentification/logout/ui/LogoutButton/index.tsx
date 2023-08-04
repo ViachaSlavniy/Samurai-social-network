@@ -11,7 +11,9 @@ export const LogoutButton = () => {
     }
 
     return (
-        <Button onClick={logout} buttonType="reject">
+        <Button onClick={logout}
+                buttonType="secondary"
+        >
             Logout
         </Button>
     );

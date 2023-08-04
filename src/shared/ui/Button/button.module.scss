@@ -6,7 +6,7 @@
 
   cursor: pointer;
 
-  &-approve {
+  &-primary {
     background-color: #2aa3fb;
     color: #fff;
 
@@ -16,7 +16,7 @@
     }
   }
 
-  &-reject {
+  &-secondary {
     color: #ff9b8a;
     background-color: rgba(255, 155, 138, .2);
 

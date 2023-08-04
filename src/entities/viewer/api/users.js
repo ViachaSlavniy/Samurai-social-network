@@ -1,4 +1,4 @@
-import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SET_FRIENDS} from '../../model/actions/types';
+import {SET_USERS, SET_LOAD, SET_CURRENT_PAGE, SET_FRIENDS} from '../../model/actions/types';
 import {instance} from '../../../shared/api/api';
 
 
@@ -41,19 +41,6 @@ export const setFriendsAC = (obj) => {
     }
 }
 
-export const followAC = (userId) => {
-    return {
-        type: FOLLOW,
-        payload: userId
-    }
-}
-
-export const unfollowAC = (userId) => {
-    return {
-        type: UNFOLLOW,
-        payload: userId
-    }
-}
 
 export const setLoadAC = (boolean) => {
     return {
@@ -89,21 +76,5 @@ export const getFriendsTC = (currentPage = 1, pageSize = 10) => (dispatch) => {
     })
 }
 
-export const followTC = (userId) => (dispatch) => {
-    usersAPI.follow(userId)
-            .then((resp) => {
-            if(resp.resultCode === 0) {
-                dispatch(followAC(userId));
-            }
-    })
-}
 
-export const unfollowTC = (userId) => (dispatch) => {
-    usersAPI.unfollow(userId)
-            .then((resp) => {
-            if(resp.resultCode === 0) {
-                dispatch(unfollowAC(userId));
-            }
-    })
-}
 

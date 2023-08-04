@@ -4,8 +4,8 @@ import ProfileWithRouter from "../components/Profile/Profile";
 import Messages from "../components/Messages/Messages";
 import Newsfeed from "../components/News/News";
 import Friends from "../components/Friends/Friends";
-import Users from "../components/Users/Users";
 import {Login} from "../features/authentification/login";
+import {UsersPage} from "../pages/UsersPage";
 
 export const AppRouter = () => {
     return (
@@ -14,7 +14,7 @@ export const AppRouter = () => {
             <Route path="/messages" render={() => <Messages/>}/>
             <Route path="/news" render={() => <Newsfeed/>}/>
             <Route path="/friends" render={() => <Friends/>}/>
-            <Route path="/users" render={() => <Users/>}/>
+            <Route path="/users" render={() => <UsersPage/>}/>
             <Route path="/login" render={() => <Login/>}/>
             <Redirect from="/" to="/profile"/>
         </Switch>

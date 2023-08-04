@@ -4,7 +4,7 @@ import Pagination from 'react-bootstrap/Pagination';
 import { useDispatch } from 'react-redux';
 import { setCurrentPageAC } from '../../../entities/viewer/api/users'
 
-function Paginator({totalCount, currentPage, pageSize, portionSize}) {
+export const Paginator = ({totalCount, currentPage, pageSize, portionSize}) => {
     const dispatch = useDispatch()
 
     // Получаем кол-во всех страниц в пагинации
@@ -52,5 +52,3 @@ function Paginator({totalCount, currentPage, pageSize, portionSize}) {
         </div>
     )
 }
-
-export default Paginator

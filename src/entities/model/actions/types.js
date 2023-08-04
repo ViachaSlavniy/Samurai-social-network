@@ -18,7 +18,7 @@ export const SET_PROFILE = 'SET_PROFILE';
 export const SET_FETCH = 'SET_FETCH';
 export const SET_EDIT_MODE = 'SET_EDIT_MODE';
 
-//Users types
+//UsersPage types
 
 export const SET_USERS = 'SET_USERS';
 export const SET_FRIENDS = 'SET_FRIENDS';

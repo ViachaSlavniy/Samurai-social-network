@@ -3,10 +3,9 @@ import s from './Friends.module.css'
 import usersBg from '../../shared/assets/images/usersBg.jpg';
 import {getFriendsTC} from '../../entities/viewer/api/users';
 import {useDispatch, useSelector} from 'react-redux';
-import Preloader from '../Common/Preloader';
-import FriendsCard from './FriendsCard/FriendsCard';
-import Paginator from '../Common/Pagination/Pagination';
 import {Redirect} from 'react-router-dom';
+import {UserCard} from "../../entities/viewer/ui/UserCard/UserCard";
+import {Paginator, Preloader} from "../../shared/ui";
 
 function Friends() {
     const dispatch = useDispatch();
@@ -20,7 +19,7 @@ function Friends() {
     }, [currentPage])
 
     const oldUsersArr = useSelector(({users}) => users.friends.items);
-    const newUsersArr = oldUsersArr.map(item => <FriendsCard key={item.id} {...item}/>)
+    const newUsersArr = oldUsersArr.map(item => <UserCard key={item.id} {...item}/>)
 
     return (
         <>

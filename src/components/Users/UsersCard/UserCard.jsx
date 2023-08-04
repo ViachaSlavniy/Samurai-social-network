@@ -6,7 +6,14 @@ import cardBg from '../../../shared/assets/images/bg1.jpg';
 import unknownUser from '../../../shared/assets/images/unknown150.jpg';
 import s from './UserCard.module.css'
 
-function UserCard({id, name, status, photos, followed}) {
+function UserCard({
+                      id,
+                      name,
+                      status,
+                      photos,
+                      followed,
+
+}) {
     const dispatch = useDispatch();
 
     const [isFollowed, setIsFollowed] = useState(false);
