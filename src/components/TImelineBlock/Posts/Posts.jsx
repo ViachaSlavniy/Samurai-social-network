@@ -1,10 +1,10 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {addPostAC, postChangeAC} from '../../../../entities/profile';
+import {addPostAC, postChangeAC} from '../../../entities/profile';
 import Post from './Post/Post';
 import s from './Posts.module.css';
-import unknownUser from '../../../../shared/assets/images/unknown150.jpg'
-import {Button} from "../../../../shared/ui";
+import unknownUser from '../../../shared/assets/images/unknown150.jpg'
+import {Button} from "../../../shared/ui";
 
 const Posts = () => {
     const dispatch = useDispatch();

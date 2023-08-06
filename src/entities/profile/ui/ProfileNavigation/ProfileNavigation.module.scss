@@ -1,0 +1,42 @@
+.navigation {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 4rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
+
+  font-size: .9rem;
+  height: 100%;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+  color:#8c91b6;
+  background-color: #1e2745;
+  transition: all .1s linear;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: #50b5ff;
+  }
+}
+
+.active {
+  color: #fff;
+  background-color: #50b5ff;
+
+  &:hover {
+    color: #fff;
+  }
+}

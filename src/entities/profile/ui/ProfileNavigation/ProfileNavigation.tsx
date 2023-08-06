@@ -1,20 +1,27 @@
 import React, {useState} from "react";
+import cn from "classnames";
+import styles from './ProfileNavigation.module.scss';
 
 export const ProfileNavigation = () => {
 
     const [activeInfoItem, setActiveInfoItem] = useState(0)
-    const profileInfoArr = ['Timeline', 'About'];
+    const profileNavigation = ['Timeline', 'About'];
 
     return (
-        <div className={s.profileInfo}>
-            {
-                profileInfoArr.map((item, index) => (
-                    <div key={item}
+        <div className={styles.navigation}>
+            {profileNavigation.map((item, index) => (
+                    <button className={cn(styles.item,
+                        {
+                            [styles.active]: index === activeInfoItem
+                        }
+                    )}
+                         key={item}
                          onClick={() => setActiveInfoItem(index)}
-                         className={`${s.profileInfo__item} ${index === activeInfoItem && s.active}`}>
+                    >
                         {item}
-                    </div>))
-            }
+                    </button>
+                )
+            )}
         </div>
     );
 };

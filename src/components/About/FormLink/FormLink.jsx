@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './FormLink.module.css';
 import { Field } from 'redux-form';
-import {Element} from '../../../../shared/ui';
+import {Element} from '../../../shared/ui';
 import { useSelector } from 'react-redux';
 
 function FormLink({title, placeholder, type='text', name, currentInfo}) {

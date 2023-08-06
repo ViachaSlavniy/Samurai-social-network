@@ -51,9 +51,9 @@ export const getProfileForAuthTC = (id) => (dispatch) => {
 export const getProfileTC = (id) => (dispatch) => {
     return profileAPI.getProfile(id)
         .then((data) => {
-            dispatch(setFetchingAC(false))
+            dispatch(setFetchingAC(true))
             dispatch(setProfileAC(data))
-            dispatch(setFetchingAC(true)) 
+            dispatch(setFetchingAC(false))
         })
 }
 
