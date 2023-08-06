@@ -1,4 +1,4 @@
-import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH, SET_EDIT_MODE } from './types';
+import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH, SET_EDIT_MODE } from '../../model/actions/types';
 import {profileAPI} from '../../../shared/api/api';
 import {stopSubmit} from 'redux-form';
 import {setAuthUserInfoAC} from "../../session";

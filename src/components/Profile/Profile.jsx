@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Redirect, withRouter} from 'react-router-dom';
-import {getProfileTC, setEditModeAC} from '../../entities/model/actions/profile';
 import {useState} from 'react';
 import s from './Profile.module.css';
 import unknown from '../../shared/assets/images/unknown150.jpg'
@@ -12,11 +11,11 @@ import facebook from '../../shared/assets/icons/facebook.svg';
 import twitter from '../../shared/assets/icons/twitter.svg';
 import youtube from '../../shared/assets/icons/youtube.svg';
 import edit from '../../shared/assets/icons/pencil.svg'
-// import settings from './../../assets/icons/settings.svg'
 import About from './About/About';
 import TimelineBlock from './TImelineBlock/TimelineBlock';
 import {setAuthUserDataTC} from "../../entities/session";
 import {Preloader} from "../../shared/ui";
+import {getProfileTC, setEditModeAC} from "../../entities/profile";
 
 
 const Profile = (props) => {
@@ -42,7 +41,7 @@ const Profile = (props) => {
     const profile = useSelector(({profile}) => profile.profilePage);
 
     const [activeInfoItem, setActiveInfoItem] = useState(0)
-    const profileInfoArr = ['Timeline', 'About', 'Friends', 'Photos'];
+    const profileInfoArr = ['Timeline', 'About'];
 
 
     // For EDITMODE
@@ -148,13 +147,6 @@ const Profile = (props) => {
                             {
                                 activeInfoItem === 1 && <About/>
                             }
-                            {
-                                activeInfoItem === 2 && 'FRIENDS'
-                            }
-                            {
-                                activeInfoItem === 3 && 'PHOTOS'
-                            }
-
                         </div>
                         : <Preloader/>
                     }

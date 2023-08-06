@@ -8,7 +8,7 @@ import {Button, Element} from "../../../../../shared/ui";
 import {loginTC} from "../../model/login";
 import styles from './LoginForm.module.scss';
 
-export const Login = () => {
+export const LoginForm = () => {
     const dispatch = useDispatch()
     const {isAuth, captcha} = useSelector(({auth}) => auth);
 
@@ -28,7 +28,7 @@ export const Login = () => {
     )
 }
 
-const LoginForm = ({captcha, error, ...props}) => {
+const Form = ({captcha, error, ...props}) => {
     const {handleSubmit} = props
     return (
         <form onSubmit={handleSubmit} autoComplete="off">
@@ -68,4 +68,4 @@ const LoginForm = ({captcha, error, ...props}) => {
 
 const LoginReduxForm = reduxForm({
     form: 'login'
-})(LoginForm)
+})(Form)

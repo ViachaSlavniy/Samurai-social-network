@@ -1,7 +1,7 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import { useSelector, useDispatch } from 'react-redux';
-import {setEditModeAC} from '../../../../entities/model/actions/profile';
+import {setEditModeAC} from '../../../../entities/profile';
 import {Button, Element} from "../../../../shared/ui";
 import s from './AboutForm.module.css';
 

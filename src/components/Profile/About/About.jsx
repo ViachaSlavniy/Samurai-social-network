@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import s from './About.module.css';
 import AboutReduxForm from './AboutForm/AboutForm';
 import AboutData from './AboutData/AboutData';
-import {setProfileInfoTC, setEditModeAC} from '../../../entities/model/actions/profile';
+import {setProfileInfoTC, setEditModeAC} from '../../../entities/profile';
 
 
 const About = () => {

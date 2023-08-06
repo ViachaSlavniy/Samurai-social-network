@@ -1,0 +1,1 @@
+export {getProfileForAuthTC} from '../model/profile-actions';
