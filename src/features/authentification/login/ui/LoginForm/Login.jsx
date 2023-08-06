@@ -57,7 +57,7 @@ const LoginForm = ({captcha, error, ...props}) => {
             }
             <Button
                 className={styles['login-button']}
-                buttonType="approve"
+                buttonType="primary"
                 type="submit"
             >
                 Login

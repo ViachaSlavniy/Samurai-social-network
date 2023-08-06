@@ -3,7 +3,7 @@ import {useDispatch} from "react-redux";
 import {Button} from "../../../../../shared/ui";
 import {followTC} from "../../model/follow";
 
-export const FollowButton = (id) => {
+export const FollowButton = ({id}) => {
     const dispatch = useDispatch();
 
     const handleFollowButtonClick = useCallback(() => {
