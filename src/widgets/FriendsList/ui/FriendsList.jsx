@@ -2,8 +2,7 @@ import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import usersBg from '../../../shared/assets/images/usersBg.jpg';
-import {getFriendsTC} from '../../../entities/viewer/api/users';
-import {UserCard} from "../../../entities/viewer/ui/UserCard/UserCard";
+import {UserCard, getFriendsTC} from "../../../entities/viewer";
 import {UnFollowButton} from "../../../features/viewer";
 import {Paginator, Preloader} from "../../../shared/ui";
 import styles from './FriendsList.module.css';
@@ -12,9 +11,9 @@ export const FriendsList = () => {
     const dispatch = useDispatch();
 
     const {isAuth} = useSelector(({auth}) => auth)
-    const {isLoaded, currentPage, pageSize, portionSize} = useSelector(({users}) => users);
-    const friends = useSelector(({users}) => users.friends.items);
-    const {totalCount} = useSelector(({users}) => users.friends)
+    const {isLoaded, currentPage, pageSize, portionSize} = useSelector(({viewer}) => viewer);
+    const friends = useSelector(({viewer}) => viewer.friends.items);
+    const {totalCount} = useSelector(({viewer}) => viewer.friends)
 
     useEffect(() => {
         dispatch(getFriendsTC(currentPage, pageSize))

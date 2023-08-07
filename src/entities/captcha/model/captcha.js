@@ -1,7 +1,6 @@
-import {SET_CAPTCHA} from './types';
+import {SET_CAPTCHA} from '../../model/actions/types';
 import {securityAPI} from '../../../shared/api/api';
 
-//ACTION CREATORS
 
 export const setCaptchaAC = (url) => {
     return {
@@ -9,10 +8,6 @@ export const setCaptchaAC = (url) => {
         payload: url
     }
 }
-
-
-
-//THUNK CREATORS
 
 export const captchaTC = () => (dispatch) => {
     securityAPI.getCaptcha()

@@ -18,7 +18,7 @@ const initialState = {
     }
 }
 
-const viewerReducer = (state = initialState, action) => {
+export const viewerReducer = (state = initialState, action) => {
     switch(action.type) {
         case SET_USERS: {
             return {
@@ -82,8 +82,6 @@ const viewerReducer = (state = initialState, action) => {
         default: return state
     }
 }
-
-export default viewerReducer;
 
 
 

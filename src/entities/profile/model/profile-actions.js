@@ -1,22 +1,9 @@
-import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH, SET_EDIT_MODE } from '../../model/actions/types';
+import { SET_PROFILE, SET_FETCH, SET_EDIT_MODE } from '../../model/actions/types';
 import {profileAPI} from '../../../shared/api/api';
 import {stopSubmit} from 'redux-form';
 import {setAuthUserInfoAC} from "../../session";
 
 
-export const addPostAC = (post) => {
-    return {
-        type: ADD_POST,
-        payload: post
-    }
-}
-
-export const postChangeAC = (postText) => {
-    return {
-        type: CHANGE_POST_TEXT,
-        payload: postText
-    }
-}
 
 export const setProfileAC = (obj) => {
     return {

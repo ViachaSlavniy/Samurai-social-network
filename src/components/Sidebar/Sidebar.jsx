@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 const Sidebar = () => {
     const dispatch = useDispatch();
 
-    const items = useSelector(({users}) => users.friends.items)
+    const items = useSelector(({viewer}) => viewer.friends.items)
     useEffect(() => {
         dispatch(getFriendsTC())
     },[])

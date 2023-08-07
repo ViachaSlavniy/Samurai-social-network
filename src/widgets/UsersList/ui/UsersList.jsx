@@ -1,15 +1,14 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {getUsersTC} from "../../../entities/viewer/api/users";
-import {UserCard} from "../../../entities/viewer/ui/UserCard/UserCard";
+import {UserCard, getUsersTC} from "../../../entities/viewer";
 import {Paginator, Preloader} from "../../../shared/ui";
 import {FollowButton, UnFollowButton} from "../../../features/viewer";
 import styles from "./UsersList.module.css";
 
 export const UsersList = () => {
     const dispatch = useDispatch();
-    const {isLoaded, currentPage, pageSize, totalCount, portionSize} = useSelector(({users}) => users);
-    const users = useSelector(({users}) => users.items);
+    const {isLoaded, currentPage, pageSize, totalCount, portionSize} = useSelector(({viewer}) => viewer);
+    const users = useSelector(({viewer}) => viewer.items);
 
     const usersComponents = users.map(user => (
             <UserCard key={user.id}

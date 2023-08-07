@@ -3,7 +3,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {Redirect, withRouter} from "react-router-dom";
 import {Preloader} from "../../shared/ui";
 import {setAuthUserDataTC} from "../../entities/session";
-import {getProfileTC, ProfileNavigation, ProfileHeader, ProfileContent} from "../../entities/profile";
+import {getProfileTC, ProfileNavigation, ProfileHeader} from "../../entities/profile";
+import {AddPostForm} from "../../features/viewer";
+import {PostList} from "../../widgets/PostList/PostList";
 
 const ProfilePage = (props: any) => {
     const dispatch = useDispatch();
@@ -35,7 +37,8 @@ const ProfilePage = (props: any) => {
         <>
             <ProfileHeader />
             <ProfileNavigation />
-            <ProfileContent />
+            <AddPostForm />
+            <PostList />
         </>
     );
 };
