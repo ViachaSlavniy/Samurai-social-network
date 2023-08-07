@@ -1,4 +1,4 @@
-import {SET_USERS, SET_LOAD, SET_CURRENT_PAGE, SET_FRIENDS} from '../../model/actions/types';
+import {SET_USERS, SET_LOAD, SET_CURRENT_PAGE, SET_FRIENDS} from '../../app';
 import {instance} from '../../../shared/api/api';
 
 

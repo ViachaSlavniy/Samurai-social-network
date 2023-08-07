@@ -1,4 +1,4 @@
-import { SET_PROFILE, SET_FETCH, SET_EDIT_MODE } from '../../model/actions/types';
+import { SET_PROFILE, SET_FETCH, SET_EDIT_MODE } from '../../app';
 import {profileAPI} from '../../../shared/api/api';
 import {stopSubmit} from 'redux-form';
 import {setAuthUserInfoAC} from "../../session";

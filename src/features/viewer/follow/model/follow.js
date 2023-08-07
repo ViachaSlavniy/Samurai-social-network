@@ -1,5 +1,5 @@
-import {usersAPI} from "../../../../entities/viewer/api/users";
-import {FOLLOW} from "../../../../entities/model/actions/types";
+import {usersAPI} from "../../../../entities/viewer";
+import {FOLLOW} from "../../../../entities/app";
 
 export const followAC = (userId) => {
     return {

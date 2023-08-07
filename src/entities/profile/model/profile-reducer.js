@@ -1,4 +1,4 @@
-import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH, SET_EDIT_MODE } from '../../model/actions/types';
+import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH, SET_EDIT_MODE } from '../../app';
 
 
 const initialState = {
@@ -14,25 +14,25 @@ const initialState = {
 const profileReducer = (state = initialState, action) => {
         switch(action.type) {
             case ADD_POST: {
-    
+
                 const newPost = {id: state.postsData.length + 1, postText: action.payload, likesCount: 0}
-    
+
                 return {
                     ...state,
-                    postsData: [...state.postsData, newPost] 
+                    postsData: [...state.postsData, newPost]
                 }
             }
 
             case CHANGE_POST_TEXT: {
-    
+
                 return {
                     ...state,
-                    postText: action.payload 
+                    postText: action.payload
                 }
             }
 
             case SET_PROFILE: {
-    
+
                 return {
                     ...state,
                     profilePage: {
@@ -41,7 +41,7 @@ const profileReducer = (state = initialState, action) => {
                 }
             }
             case SET_FETCH: {
-    
+
                 return {
                     ...state,
                     isFetching: action.payload

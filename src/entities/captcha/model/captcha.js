@@ -1,4 +1,4 @@
-import {SET_CAPTCHA} from '../../model/actions/types';
+import {SET_CAPTCHA} from '../../app';
 import {securityAPI} from '../../../shared/api/api';
 
 

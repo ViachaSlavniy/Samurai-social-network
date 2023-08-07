@@ -1,4 +1,4 @@
-import {ADD_POST, CHANGE_POST_TEXT} from "../../model/actions/types";
+import {ADD_POST, CHANGE_POST_TEXT} from "../../app";
 
 export const addPostAC = (post) => {
     return {

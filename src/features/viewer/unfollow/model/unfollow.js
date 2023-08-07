@@ -1,5 +1,5 @@
-import {UNFOLLOW} from "../../../../entities/model/actions/types";
-import {usersAPI} from "../../../../entities/viewer/api/users";
+import {UNFOLLOW} from "../../../../entities/app";
+import {usersAPI} from "../../../../entities/viewer";
 
 export const unfollowAC = (userId) => {
     return {

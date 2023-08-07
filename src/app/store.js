@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import profile from '../entities/profile/model/profile-reducer';
 import {authReducer} from '../entities/session';
 import {viewerReducer} from '../entities/viewer';
-import app from '../entities/model/reducers/app-reducer';
+import app from '../entities/app/model/reducers/app-reducer';
 
 const reducers = combineReducers({
     app,

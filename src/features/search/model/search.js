@@ -1,5 +1,5 @@
-import {SEARCH_USERS} from "../../../entities/model/actions/types";
-import {usersAPI} from "../../../entities/viewer/api/users";
+import {SEARCH_USERS} from "../../../entities/app";
+import {usersAPI} from "../../../entities/viewer";
 
 export const searchAC = (obj) => {
     return {
