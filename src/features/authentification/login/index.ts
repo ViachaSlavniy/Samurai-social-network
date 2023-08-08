@@ -1,2 +1,2 @@
-export {loginTC} from './model/login'
+export {loginTC} from './model/thunks'
 export {LoginForm} from './ui/LoginForm/LoginForm'

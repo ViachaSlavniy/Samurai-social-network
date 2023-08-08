@@ -1,2 +1,2 @@
-export {logOutTC} from './model/logout'
+export {logOutTC} from './model/thunks'
 export {LogoutButton} from './ui/LogoutButton'

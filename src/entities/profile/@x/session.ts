@@ -1,1 +1,1 @@
-export {getProfileForAuthTC} from '../model/profile-actions';
+export {getProfileForAuthTC} from '../model/thunks';

@@ -3,3 +3,9 @@ export interface IPost {
     postText: string;
     likesCount: number;
 }
+
+
+export type PostInitialState = {
+    postText: string,
+    postsData: IPost[]
+}

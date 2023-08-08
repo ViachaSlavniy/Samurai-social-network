@@ -2,24 +2,24 @@ import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from '../components/Sidebar/Sidebar';
-import {initializeApp} from "../entities/session";
-import {Layout, Preloader} from "../shared/ui";
 import {LayoutHeader} from "../widgets/Header";
+import {Navigation} from "../widgets/Navigation";
+import {initializeApp} from "../entities/app";
+import {Layout, Preloader} from "../shared/ui";
 import {AppRouter} from "./appRouter";
-import {Navigation} from "../widgets/Navigation/ui/Navigation";
 import './index.css';
 
 
 export const App = () => {
     const dispatch = useDispatch();
 
-    const {initialize} = useSelector(({app}: any) => app)
+    const {initialized} = useSelector(({app}: any) => app)
 
     useEffect(() => {
         dispatch(initializeApp());
     }, [dispatch])
 
-    if (!initialize) {
+    if (!initialized) {
         return <Preloader/>
     }
 

@@ -1,5 +1,3 @@
-import {IPost} from "../../post/model/types";
-
 export enum Contact {
     facebook = "facebook",
     website = "website",
@@ -28,8 +26,6 @@ export interface IProfile {
 
 export type ProfileInitialState = {
     profilePage: IProfile | null,
-    postText: '',
-    postsData: IPost[]
     isFetching: boolean;
     editMode: boolean;
 }

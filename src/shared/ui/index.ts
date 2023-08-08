@@ -1,5 +1,5 @@
 export {Button} from './Button'
 export {Element} from './FormControls/FormControls'
 export {Layout} from './Layout/Layout'
-export {Paginator} from './Pagination/Pagination'
+export {Paginator} from './Pagination/ui/Pagination'
 export {Preloader} from './Preloader/Preloader'

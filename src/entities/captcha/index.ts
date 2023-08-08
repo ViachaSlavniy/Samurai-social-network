@@ -1,1 +1,1 @@
-export {setCaptchaAC, captchaTC} from './model/captcha';
+export {setCaptchaAC, captchaTC} from './model/thunks';

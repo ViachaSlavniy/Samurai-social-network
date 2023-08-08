@@ -1,0 +1,1 @@
+export {setAuthUserDataTC} from '../'

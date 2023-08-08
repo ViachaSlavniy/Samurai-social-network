@@ -12,19 +12,19 @@ export interface IUser {
 
 
 export type ViewerInitialState = {
-    items: IUser[];
-    isLoaded: boolean;
-    totalCount: number | null;
+    users: IUser[];
+    isLoading: boolean;
+    totalCount: number;
     error: null;
     currentPage: number;
     pageSize: number;
     portionSize: number;
     searchResult: {
         items: IUser[],
-        totalCount: number | null;
+        totalCount: number;
     },
     friends: {
         items: IUser[];
-        totalCount: number | null;
+        totalCount: number;
     }
 }

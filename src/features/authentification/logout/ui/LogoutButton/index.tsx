@@ -1,6 +1,6 @@
 import {useDispatch} from "react-redux";
 import {Button} from "../../../../../shared/ui";
-import {logOutTC} from "../../model/logout";
+import {logOutTC} from "../../model/thunks";
 
 export const LogoutButton = () => {
     const dispatch = useDispatch();
