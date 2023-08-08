@@ -6,7 +6,7 @@ import ResultItem from '../ResultItem/ResultItem';
 
 const ResultBlock = ({showSearchBlock}) => {
 
-    const {items} = useSelector(({users}) => users.searchResult);
+    const {items} = useSelector(({viewer}) => viewer.searchResult);
     const resultArr = items.map(item => <ResultItem key={item.id} name={item.name} userId={item.id} photo={item.photos.small} status={item.status}/>)
 
     return (

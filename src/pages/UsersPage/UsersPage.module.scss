@@ -1,0 +1,24 @@
+.image-block {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: header;
+  height: 250px;
+  color: #fff;
+
+  background: url(../../shared/assets/images/usersBg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 300px;
+  height: 100px;
+  border-radius: 5px;
+  background-color: #1E2745;
+  opacity: .9;
+}

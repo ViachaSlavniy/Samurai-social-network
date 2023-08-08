@@ -1,7 +1,8 @@
 import {Dispatch} from "redux";
 import {sessionAPI} from "../../../../entities/session";
+import {LOG_OUT} from "../../../../entities/session/model/types";
 
-export const LOG_OUT = 'LOG_OUT';
+
 
 const logOutAC = () => {
     return {

@@ -1,9 +1,5 @@
-import {Button} from './Button'
-import {Element} from './FormControls/FormControls'
-import {Layout} from './Layout/Layout'
-
-export {
-    Button,
-    Element,
-    Layout
-}
+export {Button} from './Button'
+export {Element} from './FormControls/FormControls'
+export {Layout} from './Layout/Layout'
+export {Paginator} from './Pagination/Pagination'
+export {Preloader} from './Preloader/Preloader'

@@ -2,17 +2,15 @@ import { combineReducers, createStore, compose } from 'redux';
 import { applyMiddleware } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
-import profile from '../entities/model/reducers/profile-reducer';
-import users from '../entities/model/reducers/users-reducer';
-import messages from '../entities/model/reducers/messages-reducer';
+import profile from '../entities/profile/model/profile-reducer';
 import {authReducer} from '../entities/session';
-import app from '../entities/model/reducers/app-reducer';
+import {viewerReducer} from '../entities/viewer';
+import app from '../entities/app/model/reducers/app-reducer';
 
 const reducers = combineReducers({
     app,
     profile,
-    users,
-    messages,
+    viewer: viewerReducer,
     auth: authReducer,
     form: formReducer
 })

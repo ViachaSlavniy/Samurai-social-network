@@ -15,7 +15,8 @@ import vk from './vk.svg';
 import youtube from './youtube.svg';
 
 
-export {user, pencil, instagram, vk, news,
+export {
+    user, pencil, instagram, vk, news,
     community, loupe, settings, twitter, youtube,
     messages, github, friends, facebook, group,
 };

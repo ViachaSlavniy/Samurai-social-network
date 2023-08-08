@@ -1,0 +1,27 @@
+.post-form {
+    background-color: #1E2745;
+    padding: 0 0 20px;
+  }
+
+.form-title {
+  padding: 20px;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #252e4b;
+}
+
+.input {
+  padding: 20px;
+  width: 100%;
+  border: none;
+  background-color:#1E2745;
+  resize: none;
+  outline: none;
+  font-size: 15px;
+  color: #8c91b6;
+}
+
+.button {
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+}

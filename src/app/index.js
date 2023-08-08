@@ -1,13 +1,12 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Nav from '../components/Nav/Nav';
 import Sidebar from '../components/Sidebar/Sidebar';
-import Preloader from '../components/Common/Preloader';
 import {initializeApp} from "../entities/session";
-import {Layout} from "../shared/ui";
-import {LayoutHeader} from "../widgets/LayoutHeader";
+import {Layout, Preloader} from "../shared/ui";
+import {LayoutHeader} from "../widgets/Header";
 import {AppRouter} from "./appRouter";
+import {Navigation} from "../widgets/Navigation/ui/Navigation";
 import './index.css';
 
 
@@ -20,18 +19,19 @@ function App() {
         dispatch(initializeApp());
     }, [])
 
+    if (!initialize) {
+        return <Preloader/>
+    }
+
     return (
         <Layout
             headerSlot={<LayoutHeader/>}
-            leftSidebarSlot={<Nav/>}
+            leftSidebarSlot={<Navigation/>}
             rightSideBarSlot={<Sidebar/>}
-            content={initialize
-                ? (
-                    <div className="app-wrapper-content">
-                        <AppRouter/>
-                    </div>
-                )
-                : <Preloader/>
+            content={
+                <div className="app-wrapper-content">
+                    <AppRouter/>
+                </div>
             }
         />
     );

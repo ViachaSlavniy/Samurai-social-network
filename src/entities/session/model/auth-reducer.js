@@ -1,7 +1,7 @@
-import {INITIALIZE_APP, SET_AUTH_USER_DATA, SET_CAPTCHA, SET_USER_INFO} from '../../model/actions/types';
-import {LOG_OUT} from "../../../features/authentification/logout";
+import {INITIALIZE_APP, SET_AUTH_USER_DATA, SET_CAPTCHA, SET_USER_INFO} from '../../app';
+import {LOG_OUT} from "./types";
+import {getProfileForAuthTC} from "../../profile/@x/session";
 import {sessionAPI} from "../api/sessionApi";
-import {getProfileForAuthTC} from "../../model/actions/profile";
 
 const initialState = {
     isAuth: false,

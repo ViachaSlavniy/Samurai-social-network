@@ -1,0 +1,62 @@
+.container {
+  position: relative;
+  height: 250px;
+  background: url(../../../../shared/assets/images/bg1.jpg) no-repeat center;
+  background-size: cover;
+}
+.photo-block {
+  position: absolute;
+  left: 50%;
+  margin-left: -75px;
+  bottom: -53px;
+}
+.photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #252e4b;
+  overflow: hidden;
+
+  & img {
+    object-fit: contain;
+    max-width: 100%;
+  }
+}
+
+.name {
+  font-size: 1.7em;
+  margin-top: 10px;
+  text-align: center;
+}
+.profile__info {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px 30px;
+  background-color: #1E2745;
+}
+.profile__social span a img {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.edit-button {
+  padding: 0;
+
+  position: absolute;
+  right: 1rem;
+  bottom: .5rem;
+
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+
+  background-color: #fff;
+
+  & img {
+    width: 2rem;
+    height: 1.2rem;
+  }
+}
+
