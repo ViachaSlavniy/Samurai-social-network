@@ -1,7 +1,9 @@
 import { ADD_POST, CHANGE_POST_TEXT, SET_PROFILE, SET_FETCH, SET_EDIT_MODE } from '../../app';
+import {AnyAction} from "redux";
+import {ProfileInitialState} from "./types";
 
 
-const initialState = {
+const initialState: ProfileInitialState = {
     profilePage: null,
     postText: '',
     postsData: [
@@ -11,7 +13,7 @@ const initialState = {
     editMode: false
 }
 
-const profileReducer = (state = initialState, action) => {
+const profileReducer = (state = initialState, action: AnyAction) => {
         switch(action.type) {
             case ADD_POST: {
 

@@ -10,14 +10,14 @@ import {Navigation} from "../widgets/Navigation/ui/Navigation";
 import './index.css';
 
 
-function App() {
+export const App = () => {
     const dispatch = useDispatch();
 
-    const {initialize} = useSelector(({app}) => app)
+    const {initialize} = useSelector(({app}: any) => app)
 
     useEffect(() => {
         dispatch(initializeApp());
-    }, [])
+    }, [dispatch])
 
     if (!initialize) {
         return <Preloader/>
@@ -36,5 +36,3 @@ function App() {
         />
     );
 }
-
-export default App;

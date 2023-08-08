@@ -1,9 +1,10 @@
 import {INITIALIZE_APP, SET_AUTH_USER_DATA, SET_CAPTCHA, SET_USER_INFO} from '../../app';
-import {LOG_OUT} from "./types";
+import {AuthInitialState, LOG_OUT} from "./types";
 import {getProfileForAuthTC} from "../../profile/@x/session";
 import {sessionAPI} from "../api/sessionApi";
+import {AnyAction} from "redux";
 
-const initialState = {
+const initialState: AuthInitialState = {
     isAuth: false,
     id: null,
     email: null,
@@ -13,7 +14,7 @@ const initialState = {
     userName: null
 }
 
-export const authReducer = (state = initialState, action) => {
+export const authReducer = (state = initialState, action: AnyAction) => {
     switch(action.type) {
 
         case SET_AUTH_USER_DATA: {
@@ -55,14 +56,14 @@ export const authReducer = (state = initialState, action) => {
     }
 }
 
-export const setAuthUserDataAC = (obj) => {
+export const setAuthUserDataAC = (obj: any) => {
     return {
         type: SET_AUTH_USER_DATA,
         payload: obj
     }
 }
 
-export const setAuthUserInfoAC = (name, photoURL) => {
+export const setAuthUserInfoAC = (name: string, photoURL: string) => {
     return {
         type: SET_USER_INFO,
         userName: name,
@@ -70,15 +71,15 @@ export const setAuthUserInfoAC = (name, photoURL) => {
     }
 }
 
-export const setAuthUserDataTC = () => (dispatch) => {
-    return sessionAPI.authMe()
-        .then(resp => {
-            if(resp.resultCode === 0) {
-                const userId = resp.data.id;
-                dispatch(getProfileForAuthTC(userId));
-                dispatch(setAuthUserDataAC(resp.data));
-            }
-        })
+export const setAuthUserDataTC = () => async (dispatch: any) => {
+    try {
+        const {resultCode, data} = await sessionAPI.authMe();
+        if(resultCode === 0) {
+            const userId = data.id;
+            dispatch(getProfileForAuthTC(userId));
+            dispatch(setAuthUserDataAC(data));
+        }
+    } catch (error) {}
 }
 
 const initializeAppAC = () => {
@@ -87,10 +88,12 @@ const initializeAppAC = () => {
     }
 }
 
-export const initializeApp = () => (dispatch) => {
-    let promise = dispatch(setAuthUserDataTC());
-    Promise.all([promise])
-        .then(() => {
-            dispatch(initializeAppAC())
-        })
+export const initializeApp = () => async (dispatch: any) => {
+    try {
+        let promise = dispatch(setAuthUserDataTC());
+        Promise.all([promise])
+            .then(() => {
+                dispatch(initializeAppAC())
+            })
+    } catch (error) {}
 }

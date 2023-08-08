@@ -1,6 +1,7 @@
 import styles from './Post.module.css';
+import {PostProps} from "./types";
 
-export const Post = ({postText, likesCount, userPhoto}) => {
+export const Post = ({postText, likesCount, userPhoto}: PostProps) => {
 
     return (
         <div className={styles.post}>

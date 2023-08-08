@@ -1,7 +1,7 @@
-import {React, useEffect} from 'react';
+import {useEffect} from 'react';
 import s from './Sidebar.module.css';
 import SidebarItem from './SidebarItem/SidebarItem';
-import { getFriendsTC } from '../../entities/viewer/api/users';
+import { getFriendsTC } from '../../entities/viewer';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Sidebar = () => {

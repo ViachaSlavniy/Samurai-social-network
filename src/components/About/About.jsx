@@ -8,7 +8,6 @@ import {setProfileInfoTC, setEditModeAC} from '../../entities/profile';
 
 
 const About = () => {
-    console.log('RENDER ABOUT')
     const dispatch = useDispatch();
     const [activeLink, setActiveLink] = useState(0);
     const activeLinks = ['Contact and Basic info', 'Work and Education'];

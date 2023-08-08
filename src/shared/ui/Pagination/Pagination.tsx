@@ -1,16 +1,17 @@
 import React from 'react';
-import { useState } from 'react';
+import {useState} from 'react';
 import Pagination from 'react-bootstrap/Pagination';
-import { useDispatch } from 'react-redux';
-import { setCurrentPageAC } from '../../../entities/viewer/api/users'
+import {useDispatch} from 'react-redux';
+import {setCurrentPageAC} from '../../../entities/viewer'
+import {PaginatorProps} from "./types";
 
-export const Paginator = ({totalCount, currentPage, pageSize, portionSize}) => {
+export const Paginator = ({totalCount, currentPage, pageSize, portionSize}: PaginatorProps) => {
     const dispatch = useDispatch()
 
     // Получаем кол-во всех страниц в пагинации
-    const pagesCount = Math.ceil(totalCount/pageSize);
+    const pagesCount = Math.ceil(totalCount / pageSize);
     const pages = [];
-    for(let i = 1; i <= pagesCount; i++) {
+    for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
 
@@ -29,25 +30,30 @@ export const Paginator = ({totalCount, currentPage, pageSize, portionSize}) => {
     const pagesPortionArr = pages.filter(page => leftBorderPortionNum <= page && page <= rightBorderPortionNum)
 
     // Получаем элементы пагинации для отображения
-    const elemsPagination = pagesPortionArr.map(page => <Pagination.Item
-        key={page}
-        onClick={() => handleCurrentPage(page)}
-        className={page === currentPage && 'active'}>
-            {page}</Pagination.Item>);
+    const elemsPagination = pagesPortionArr.map(page => (
+            <Pagination.Item
+                className={page === currentPage ? "active" : ""}
+                key={page}
+                onClick={() => handleCurrentPage(page)}
+            >
+                {page}
+            </Pagination.Item>
+        ));
 
 
-    const handleCurrentPage = (page) => {
+    const handleCurrentPage = (page: number) => {
         dispatch(setCurrentPageAC(page));
     }
 
     return (
         <div>
             <Pagination>
-                <Pagination.First onClick={() => setPortionNumber(1)} />
+                <Pagination.First onClick={() => setPortionNumber(1)}/>
                 <Pagination.Prev disabled={portionNumber === 1} onClick={() => setPortionNumber(portionNumber - 1)}/>
-                    {elemsPagination}
-                <Pagination.Next disabled={portionNumber === pagesPortion} onClick={() => setPortionNumber(portionNumber + 1)} />
-                <Pagination.Last onClick={() => setPortionNumber(pagesPortion)} />
+                {elemsPagination}
+                <Pagination.Next disabled={portionNumber === pagesPortion}
+                                 onClick={() => setPortionNumber(portionNumber + 1)}/>
+                <Pagination.Last onClick={() => setPortionNumber(pagesPortion)}/>
             </Pagination>
         </div>
     )

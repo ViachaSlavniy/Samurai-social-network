@@ -1,12 +1,13 @@
-import {instance} from "../../../shared/api/api";
+import {instance} from "../../../shared/api";
+import {SessionApi} from "./types";
 
-export const sessionAPI = {
+export const sessionAPI: SessionApi = {
     authMe(){
         return instance.get(`/auth/me`)
             .then((resp) => resp.data);
     },
-    login(logindata){
-        return instance.post(`/auth/login`, logindata)
+    login(loginData: any){
+        return instance.post(`/auth/login`, loginData)
             .then((resp) => resp.data);
     },
     logout(){

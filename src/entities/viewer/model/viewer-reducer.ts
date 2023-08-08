@@ -1,6 +1,8 @@
 import {SET_USERS, FOLLOW, UNFOLLOW, SET_LOAD, SET_CURRENT_PAGE, SEARCH_USERS, SET_FRIENDS} from '../../app'
+import {AnyAction} from "redux";
+import {ViewerInitialState} from "./types";
 
-const initialState = {
+const initialState: ViewerInitialState = {
     items: [],
     isLoaded: false,
     totalCount: null,
@@ -18,7 +20,7 @@ const initialState = {
     }
 }
 
-export const viewerReducer = (state = initialState, action) => {
+export const viewerReducer = (state = initialState, action: AnyAction) => {
     switch(action.type) {
         case SET_USERS: {
             return {
