@@ -2,18 +2,19 @@ import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Field, reduxForm} from 'redux-form';
 import {Redirect} from 'react-router-dom';
-import {required} from "../../../../../shared/lib/validators/validators";
+import {authSelector} from "../../../../../entities/session";
+import {required} from "../../../../../shared/lib";
 import styleFormControls from '../../../../../shared/ui/FormControls/FormControls.module.css'
 import {Button, Element} from "../../../../../shared/ui";
-import {loginTC} from "../../model/login";
+import {loginTC} from "../../model/thunks";
 import styles from './LoginForm.module.scss';
 
 export const LoginForm = () => {
     const dispatch = useDispatch()
-    const {isAuth, captcha} = useSelector(({auth}) => auth);
+    const {isAuth, captcha} = useSelector(authSelector);
 
-    const onSubmit = (value) => {
-        dispatch(loginTC(value));
+    const onSubmit = (formValue) => {
+        dispatch(loginTC(formValue));
     }
 
     return (
@@ -21,7 +22,9 @@ export const LoginForm = () => {
             {isAuth
                 ? <Redirect to={"/profile"}/>
                 : <div className={styles.loginBlock}>
-                    <LoginReduxForm onSubmit={onSubmit} captcha={captcha}/>
+                    <LoginReduxForm onSubmit={onSubmit}
+                                    captcha={captcha}
+                    />
                 </div>
             }
         </>
@@ -67,5 +70,5 @@ const Form = ({captcha, error, ...props}) => {
 }
 
 const LoginReduxForm = reduxForm({
-    form: 'login'
+    form: 'login',
 })(Form)

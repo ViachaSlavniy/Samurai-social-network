@@ -1,2 +1,3 @@
-export * from './model/actions/types';
-export * from './model/reducers/app-reducer';
+export * from './model/types';
+export * from './model/slice';
+export * from './model/thunks';

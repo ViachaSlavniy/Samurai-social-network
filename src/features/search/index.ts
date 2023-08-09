@@ -1,2 +1,2 @@
 export * from './model/search';
-export {SearchBlock} from './ui/index'
+export {SearchBlock} from './ui/SearchBlock'
